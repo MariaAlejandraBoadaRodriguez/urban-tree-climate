@@ -171,6 +171,78 @@
   ::-webkit-scrollbar { width:6px; }
   ::-webkit-scrollbar-track { background:#ffffff; }
   ::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+
+  /* REFERENCES BUTTON */
+  .ref-btn {
+    padding:8px 22px; border-radius:2px;
+    border:1px solid var(--c-2030); background:transparent;
+    color:var(--c-2030); font-family:'DM Mono',monospace;
+    font-size:0.8rem; letter-spacing:0.1em; cursor:pointer;
+    transition:all 0.2s; display:flex; align-items:center; gap:6px;
+  }
+  .ref-btn:hover { background:var(--c-2030); color:#fff; }
+  .ref-btn::before { content:'📚'; font-size:0.9rem; }
+
+  /* REFERENCES MODAL */
+  .modal-overlay {
+    display:none; position:fixed; inset:0;
+    background:rgba(0,0,0,0.55); z-index:1000;
+    align-items:center; justify-content:center;
+    backdrop-filter:blur(2px);
+  }
+  .modal-overlay.open { display:flex; }
+  .modal {
+    background:#fff; border:1px solid var(--border);
+    border-radius:6px; max-width:780px; width:92%;
+    max-height:82vh; display:flex; flex-direction:column;
+    box-shadow:0 20px 60px rgba(0,0,0,0.15);
+    animation:fadeIn 0.25s ease forwards;
+  }
+  .modal-header {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 24px; border-bottom:1px solid var(--border);
+  }
+  .modal-header h2 {
+    font-family:'Bebas Neue',sans-serif; font-size:1.6rem;
+    color:var(--white); letter-spacing:0.06em;
+  }
+  .modal-header h2 span { color:var(--c-2030); }
+  .modal-close {
+    background:none; border:1px solid var(--border);
+    border-radius:2px; width:30px; height:30px;
+    cursor:pointer; font-size:1rem; color:#555;
+    display:flex; align-items:center; justify-content:center;
+    transition:all 0.2s;
+  }
+  .modal-close:hover { background:var(--c-2030); color:#fff; border-color:var(--c-2030); }
+  .modal-body { padding:24px; overflow-y:auto; }
+  .modal-subtitle {
+    font-family:'DM Mono',monospace; font-size:0.65rem;
+    text-transform:uppercase; letter-spacing:0.15em;
+    color:#555; margin-bottom:16px;
+  }
+  .ref-list { display:flex; flex-direction:column; gap:0; }
+  .ref-item {
+    padding:14px 0; border-bottom:1px solid var(--border);
+    font-size:0.75rem; color:var(--text); line-height:1.65;
+  }
+  .ref-item:last-child { border-bottom:none; }
+  .ref-item .ref-num {
+    font-family:'DM Mono',monospace; font-size:0.65rem;
+    color:var(--c-2030); font-weight:600; margin-bottom:3px;
+  }
+  .ref-item .ref-authors { font-weight:600; color:var(--white); }
+  .ref-item .ref-doi {
+    font-family:'DM Mono',monospace; font-size:0.62rem;
+    color:#888; margin-top:3px;
+  }
+  .ref-item .ref-doi a { color:var(--c-2030); text-decoration:none; }
+  .ref-item .ref-doi a:hover { text-decoration:underline; }
+  .modal-footer {
+    padding:14px 24px; border-top:1px solid var(--border);
+    font-family:'DM Mono',monospace; font-size:0.62rem;
+    color:#888; text-align:right;
+  }
 </style>
 </head>
 <body>
@@ -203,6 +275,7 @@
     <button class="scen-btn s2030 active" onclick="setScenario('2030')">2030</button>
     <button class="scen-btn s2050" onclick="setScenario('2050')">2050</button>
     <button class="scen-btn s2080" onclick="setScenario('2080')">2080</button>
+    <button class="ref-btn" onclick="openRefs()">References</button>
   </div>
 
   <!-- CLIMATE INDICATORS -->
@@ -306,6 +379,96 @@
 
   </div>
 
+</div>
+
+<!-- REFERENCES MODAL -->
+<div class="modal-overlay" id="refs-modal" onclick="closeRefsOutside(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>BIBLIO<span>GRAPHY</span></h2>
+      <button class="modal-close" onclick="closeRefs()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-subtitle">· Bibliographic References · Urban Tree Inventory &amp; Climate Simulation ·</div>
+      <div class="ref-list">
+
+        <div class="ref-item">
+          <div class="ref-num">[1]</div>
+          <span class="ref-authors">Bechtold, W. A.</span> (2003). Crown-diameter prediction models for 87 species of stand-grown trees in the eastern United States. <em>Southern Journal of Applied Forestry</em>, <em>27</em>(4), 269–278.
+          <div class="ref-doi">DOI: <a href="https://doi.org/10.1093/SJAF/27.4.269" target="_blank">10.1093/SJAF/27.4.269</a></div>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[2]</div>
+          <span class="ref-authors">Bechtold, W. A.</span> (2004). Largest-crown-width prediction models for 53 species in the western United States. <em>Western Journal of Applied Forestry</em>, <em>19</em>(4), 245–251.
+          <div class="ref-doi">DOI: <a href="https://doi.org/10.1093/WJAF/19.4.245" target="_blank">10.1093/WJAF/19.4.245</a></div>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[3]</div>
+          <span class="ref-authors">City of Hamilton Open Data.</span> (n.d.). <em>Public tree inventory</em>. Retrieved from <a href="https://open.hamilton.ca/datasets/08e50c6cbb2545b4897d613a817fa4d4_0/explore" target="_blank" style="color:var(--c-2030)">open.hamilton.ca</a>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[4]</div>
+          <span class="ref-authors">City of Hamilton Open Data.</span> (n.d.). <em>Trees planted dataset</em>. Retrieved from <a href="https://open.hamilton.ca/datasets/02d4661f34e54a5eb06e17001952681f_19/explore" target="_blank" style="color:var(--c-2030)">open.hamilton.ca</a>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[5]</div>
+          <span class="ref-authors">Hernández-Ramos, J., Ángeles-Pérez, G., Pérez-Miranda, R., et al.</span> (2022). Morfometría de copa para <em>Quercus crassifolia</em> Humb. &amp; Bonpl. y <em>Quercus rugosa</em> Née en Hidalgo, México. <em>Ciencia Florestal</em>, <em>32</em>(3), 1484–1503.
+          <div class="ref-doi">DOI: <a href="https://doi.org/10.5902/1980509865276" target="_blank">10.5902/1980509865276</a></div>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[6]</div>
+          <span class="ref-authors">Lin, W., Meng, Y., Qiu, Z., Zhang, S., &amp; Wu, J.</span> (2017). Measurement and calculation of crown projection area and crown volume of individual trees based on 3D laser-scanned point-cloud data. <em>International Journal of Remote Sensing</em>, <em>38</em>(4), 1083–1100.
+          <div class="ref-doi">DOI: <a href="https://doi.org/10.1080/01431161.2016.1265690" target="_blank">10.1080/01431161.2016.1265690</a></div>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[7]</div>
+          <span class="ref-authors">Martin, N. A., Chappelka, A. H., Loewenstein, E. F., Keever, G. J., &amp; Somers, G. L.</span> (2012). Predictive open-grown crown width equations for three oak species planted in a southern urban locale. <em>Arboriculture &amp; Urban Forestry</em>, <em>38</em>(2), 58–63.
+          <div class="ref-doi">DOI: <a href="https://doi.org/10.48044/JAUF.2012.010" target="_blank">10.48044/JAUF.2012.010</a></div>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[8]</div>
+          <span class="ref-authors">Peper, P. J., McPherson, E. G., &amp; Mori, S. M.</span> (2001). Equations for predicting diameter, height, crown width, and leaf area of San Joaquin Valley street trees. <em>Journal of Arboriculture</em>, <em>27</em>(6), 306–317.
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[9]</div>
+          <span class="ref-authors">Raptis, D., Kazana, V., Kazaklis, A., &amp; Stamatiou, C.</span> (2018). A crown width-diameter model for natural even-aged black pine forest management. <em>Forests</em>, <em>9</em>(10), 610.
+          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/F9100610" target="_blank">10.3390/F9100610</a></div>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[10]</div>
+          <span class="ref-authors">Russell, M. B., &amp; Weiskittel, A. R.</span> (2012). Estimating tree crown widths for the primary Acadian species in Maine. <em>Northern Journal of Applied Forestry</em>, <em>29</em>(2), 66–73.
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[11]</div>
+          <span class="ref-authors">Sharma, R. P., Bílek, L., Vacek, Z., &amp; Vacek, S.</span> (2017). Modelling crown width–diameter relationship for Scots pine in the central Europe. <em>Trees</em>, <em>31</em>(6), 1875–1889.
+          <div class="ref-doi">DOI: <a href="https://doi.org/10.1007/S00468-017-1593-8" target="_blank">10.1007/S00468-017-1593-8</a></div>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[12]</div>
+          <span class="ref-authors">Sönmez, T.</span> (2009). Diameter at breast height-crown diameter prediction models for <em>Picea orientalis</em>. <em>African Journal of Agricultural Research</em>, <em>4</em>(3), 215–219.
+          <div class="ref-doi">DOI: <a href="https://doi.org/10.5897/AJAR.9000171" target="_blank">10.5897/AJAR.9000171</a></div>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-num">[13]</div>
+          <span class="ref-authors">USDA Natural Resources Conservation Service.</span> (n.d.). <em>PLANTS Database — Characteristics Search</em>. United States Department of Agriculture. Retrieved from <a href="https://plants.usda.gov/characteristics-search" target="_blank" style="color:var(--c-2030)">plants.usda.gov</a>
+        </div>
+
+      </div>
+    </div>
+    <div class="modal-footer">10 peer-reviewed articles · 3 open datasets · Urban Tree Inventory</div>
+  </div>
 </div>
 
 <script>
@@ -503,6 +666,19 @@ function render(d) {
 
 // Init on 2030
 render(SCENARIOS['2030']);
+
+function openRefs() {
+  document.getElementById('refs-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeRefs() {
+  document.getElementById('refs-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeRefsOutside(e) {
+  if (e.target === document.getElementById('refs-modal')) closeRefs();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRefs(); });
 </script>
 </body>
 </html>
