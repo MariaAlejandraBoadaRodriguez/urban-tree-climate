@@ -185,34 +185,29 @@
 
   /* RANKING BUTTON */
   .rank-btn {
-    padding:8px 22px; border-radius:2px;
-    border:1px solid var(--c-2050); background:transparent;
+    padding:8px 20px; border-radius:2px;
+    border:1px solid #b8860b; background:transparent;
     color:#b8860b; font-family:'DM Mono',monospace;
-    font-size:0.8rem; letter-spacing:0.08em; cursor:pointer;
+    font-size:0.78rem; letter-spacing:0.08em; cursor:pointer;
     transition:all 0.2s;
   }
-  .rank-btn:hover { background:var(--c-2050); color:#000; }
+  .rank-btn:hover { background:#b8860b; color:#fff; }
 
-  /* RANKING MODAL */
-  .rank-modal { max-width:920px; }
-  .rank-summary {
-    display:flex; gap:12px; margin-bottom:16px; flex-wrap:wrap;
-  }
+  /* RANKING MODAL EXTRAS */
+  .rank-modal { max-width:940px; }
+  .rank-summary { display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap; }
   .rsum-card {
-    flex:1; min-width:120px; padding:10px 14px;
-    border-radius:3px; border:1px solid var(--border);
-    text-align:center;
+    flex:1; min-width:110px; padding:10px 14px;
+    border-radius:3px; border:1px solid var(--border); text-align:center;
   }
   .rsum-card .rs-val {
-    font-family:'Bebas Neue',sans-serif; font-size:1.8rem; line-height:1;
+    font-family:'Bebas Neue',sans-serif; font-size:1.9rem; line-height:1;
   }
   .rsum-card .rs-lbl {
-    font-family:'DM Mono',monospace; font-size:0.6rem;
+    font-family:'DM Mono',monospace; font-size:0.58rem;
     text-transform:uppercase; letter-spacing:0.1em; color:#555; margin-top:3px;
   }
-  .rank-controls {
-    display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap; align-items:center;
-  }
+  .rank-controls { display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; align-items:center; }
   .rank-search {
     flex:1; min-width:180px; padding:7px 12px;
     border:1px solid var(--border); border-radius:2px;
@@ -221,63 +216,41 @@
   }
   .rank-search:focus { border-color:var(--c-2030); }
   .rank-filter {
-    padding:7px 14px; border-radius:2px;
+    padding:6px 13px; border-radius:2px;
     border:1px solid var(--border); background:var(--panel);
-    font-family:'DM Mono',monospace; font-size:0.72rem;
-    letter-spacing:0.08em; cursor:pointer; color:#555;
-    transition:all 0.2s;
+    font-family:'DM Mono',monospace; font-size:0.7rem;
+    letter-spacing:0.07em; cursor:pointer; color:#555; transition:all 0.2s;
   }
-  .rank-filter:hover { border-color:var(--c-2030); }
-  .rank-filter.active-high  { background:#D32F2F; border-color:#D32F2F; color:#fff; }
-  .rank-filter.active-mod   { background:var(--c-2050); border-color:var(--c-2050); color:#000; }
-  .rank-filter.active-low   { background:var(--c-2030); border-color:var(--c-2030); color:#fff; }
-  .rank-filter.active-all   { background:#555; border-color:#555; color:#fff; }
-  .rank-count {
-    font-family:'DM Mono',monospace; font-size:0.65rem;
-    color:#888; margin-left:auto; white-space:nowrap;
-  }
-  .rank-table-wrap { overflow-y:auto; max-height:52vh; }
-  .rank-table {
-    width:100%; border-collapse:collapse; font-size:0.72rem;
-  }
-  .rank-table thead { position:sticky; top:0; background:#fff; z-index:1; }
+  .rf-active-all  { background:#444;    border-color:#444;    color:#fff !important; }
+  .rf-active-high { background:#D32F2F; border-color:#D32F2F; color:#fff !important; }
+  .rf-active-mod  { background:#b8860b; border-color:#b8860b; color:#fff !important; }
+  .rf-active-low  { background:#2E7D32; border-color:#2E7D32; color:#fff !important; }
+  .rank-count { font-family:'DM Mono',monospace; font-size:0.62rem; color:#999; margin-left:auto; white-space:nowrap; }
+  .rank-table-wrap { overflow-y:auto; max-height:50vh; border:1px solid var(--border); border-radius:3px; }
+  .rank-table { width:100%; border-collapse:collapse; font-size:0.72rem; }
+  .rank-table thead { position:sticky; top:0; background:#fff; z-index:2; }
   .rank-table th {
     font-family:'DM Mono',monospace; font-size:0.6rem; color:#555;
     text-transform:uppercase; letter-spacing:0.1em;
-    text-align:left; padding:6px 10px; border-bottom:2px solid var(--border);
+    text-align:left; padding:8px 10px; border-bottom:2px solid var(--border);
     cursor:pointer; user-select:none; white-space:nowrap;
   }
   .rank-table th:hover { color:var(--c-2030); }
   .rank-table th.sort-asc::after  { content:' ↑'; color:var(--c-2030); }
   .rank-table th.sort-desc::after { content:' ↓'; color:var(--c-2030); }
-  .rank-table td {
-    padding:7px 10px; border-bottom:1px solid rgba(204,204,204,0.4);
-    vertical-align:middle;
-  }
+  .rank-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:middle; }
   .rank-table tr:hover td { background:rgba(46,125,50,0.04); }
-  .rank-table td.td-rank {
-    font-family:'DM Mono',monospace; color:#aaa; font-size:0.65rem; width:40px;
-  }
-  .rank-table td.td-sci { font-style:italic; color:var(--text); font-weight:600; }
-  .rank-table td.td-common { color:#555; }
-  .rank-table td.td-score {
-    font-family:'DM Mono',monospace; font-weight:600;
-    white-space:nowrap;
-  }
-  .score-bar-wrap { display:flex; align-items:center; gap:8px; }
-  .score-bar-bg {
-    flex:1; height:6px; background:rgba(0,0,0,0.08);
-    border-radius:1px; overflow:hidden; min-width:60px;
-  }
-  .score-bar-fill { height:100%; border-radius:1px; transition:width 0.3s; }
-  .rbadge {
-    display:inline-block; padding:2px 7px; border-radius:2px;
-    font-family:'DM Mono',monospace; font-size:0.58rem;
-    font-weight:600; text-transform:uppercase; white-space:nowrap;
-  }
-  .rbadge-high { background:rgba(211,47,47,0.15); color:#D32F2F; }
-  .rbadge-mod  { background:rgba(249,168,37,0.20); color:#b8860b; }
-  .rbadge-low  { background:rgba(46,125,50,0.15);  color:#2E7D32; }
+  .td-rank  { font-family:'DM Mono',monospace; color:#bbb; font-size:0.62rem; width:36px; }
+  .td-sci   { font-style:italic; font-weight:600; color:var(--text); }
+  .td-common{ color:#666; }
+  .td-score { font-family:'DM Mono',monospace; font-weight:600; white-space:nowrap; }
+  .sbar-wrap { display:flex; align-items:center; gap:8px; }
+  .sbar-bg  { flex:1; height:6px; background:#eee; border-radius:1px; overflow:hidden; min-width:55px; }
+  .sbar-fill{ height:100%; border-radius:1px; }
+  .rbadge   { display:inline-block; padding:2px 7px; border-radius:2px; font-family:'DM Mono',monospace; font-size:0.57rem; font-weight:700; text-transform:uppercase; white-space:nowrap; }
+  .rb-high  { background:rgba(211,47,47,0.13);  color:#C62828; }
+  .rb-mod   { background:rgba(184,134,11,0.15); color:#8a6200; }
+  .rb-low   { background:rgba(46,125,50,0.13);  color:#1B5E20; }
 
   /* REFERENCES MODAL */
   .modal-overlay {
@@ -486,59 +459,53 @@
       <button class="modal-close" onclick="closeRanking()">✕</button>
     </div>
     <div class="modal-body">
-      <div class="modal-subtitle">· Climate Risk Score per Tree Species · Hamilton Urban Inventory ·</div>
-
-      <!-- Summary cards -->
+      <div class="modal-subtitle">· Climate Risk Score per Tree Species · Hamilton Urban Tree Inventory ·</div>
       <div class="rank-summary">
-        <div class="rsum-card" style="background:rgba(211,47,47,0.07);border-color:rgba(211,47,47,0.3)">
-          <div class="rs-val" style="color:#D32F2F" id="cnt-high">74</div>
+        <div class="rsum-card" style="background:rgba(211,47,47,0.06);border-color:rgba(211,47,47,0.25)">
+          <div class="rs-val" style="color:#D32F2F">74</div>
           <div class="rs-lbl">High Risk</div>
         </div>
-        <div class="rsum-card" style="background:rgba(249,168,37,0.07);border-color:rgba(249,168,37,0.3)">
-          <div class="rs-val" style="color:#b8860b" id="cnt-mod">74</div>
+        <div class="rsum-card" style="background:rgba(184,134,11,0.06);border-color:rgba(184,134,11,0.25)">
+          <div class="rs-val" style="color:#b8860b">152</div>
           <div class="rs-lbl">Moderate Risk</div>
         </div>
-        <div class="rsum-card" style="background:rgba(46,125,50,0.07);border-color:rgba(46,125,50,0.3)">
-          <div class="rs-val" style="color:#2E7D32" id="cnt-low">171</div>
+        <div class="rsum-card" style="background:rgba(46,125,50,0.06);border-color:rgba(46,125,50,0.25)">
+          <div class="rs-val" style="color:#2E7D32">93</div>
           <div class="rs-lbl">Low Risk</div>
         </div>
         <div class="rsum-card" style="background:var(--panel)">
-          <div class="rs-val" style="color:var(--text)" id="cnt-total">319</div>
-          <div class="rs-lbl">Total Species</div>
+          <div class="rs-val" style="color:var(--text)">319</div>
+          <div class="rs-lbl">Total Entries</div>
         </div>
-        <div class="rsum-card" style="background:var(--panel)">
-          <div class="rs-val" style="color:#D32F2F;font-size:1.1rem;padding-top:6px" id="top-species">Tilia spp.</div>
-          <div class="rs-lbl">Highest Risk Species</div>
+        <div class="rsum-card" style="background:var(--panel);flex:2">
+          <div class="rs-val" style="color:#D32F2F;font-size:1rem;padding-top:6px;font-family:'DM Mono',monospace;letter-spacing:0.02em"><em>Tilia spp.</em></div>
+          <div class="rs-lbl">Highest Risk · Score 100%</div>
         </div>
       </div>
-
-      <!-- Controls -->
       <div class="rank-controls">
-        <input class="rank-search" type="text" id="rank-search" placeholder="Search species..." oninput="filterRanking()">
-        <button class="rank-filter active-all" id="rf-all"  onclick="setRiskFilter('all')">All</button>
-        <button class="rank-filter" id="rf-high" onclick="setRiskFilter('High Risk')">⬛ High</button>
-        <button class="rank-filter" id="rf-mod"  onclick="setRiskFilter('Moderate Risk')">⬛ Moderate</button>
-        <button class="rank-filter" id="rf-low"  onclick="setRiskFilter('Low Risk')">⬛ Low</button>
-        <span class="rank-count" id="rank-count">319 species</span>
+        <input class="rank-search" id="rank-search" type="text" placeholder="Search by scientific or common name…" oninput="renderRanking()">
+        <button class="rank-filter rf-active-all" id="rf-all"  onclick="setRF('all')">All</button>
+        <button class="rank-filter" id="rf-high" onclick="setRF('High Risk')">● High</button>
+        <button class="rank-filter" id="rf-mod"  onclick="setRF('Moderate Risk')">● Moderate</button>
+        <button class="rank-filter" id="rf-low"  onclick="setRF('Low Risk')">● Low</button>
+        <span class="rank-count" id="rank-count">319 entries</span>
       </div>
-
-      <!-- Table -->
       <div class="rank-table-wrap">
-        <table class="rank-table" id="rank-table">
+        <table class="rank-table">
           <thead>
             <tr>
-              <th onclick="sortRanking('rank')"   id="th-rank">   #</th>
-              <th onclick="sortRanking('sci')"    id="th-sci">    Scientific Name</th>
-              <th onclick="sortRanking('common')" id="th-common"> Common Name</th>
-              <th onclick="sortRanking('score')"  id="th-score"  class="sort-desc">Score</th>
-              <th onclick="sortRanking('risk')"   id="th-risk">   Risk Level</th>
+              <th onclick="sortRank('idx')"    id="rth-idx">#</th>
+              <th onclick="sortRank('sci')"    id="rth-sci">Scientific Name</th>
+              <th onclick="sortRank('common')" id="rth-common">Common Name</th>
+              <th onclick="sortRank('score')"  id="rth-score" class="sort-desc">Score</th>
+              <th onclick="sortRank('risk')"   id="rth-risk">Risk Level</th>
             </tr>
           </thead>
           <tbody id="rank-tbody"></tbody>
         </table>
       </div>
     </div>
-    <div class="modal-footer" id="rank-footer">319 species · Sorted by Risk Score (desc) · Hamilton Urban Tree Inventory</div>
+    <div class="modal-footer" id="rank-footer">319 entries · Sorted by Score (desc) · Hamilton Urban Tree Inventory</div>
   </div>
 </div>
 
@@ -555,437 +522,80 @@
 
         <div class="ref-item">
           <div class="ref-num">[1]</div>
-          <span class="ref-authors">Aguilar, F. J., Nemmaoui, A., Aguilar, M. A., &amp; Peñalver, A.</span> (2021). Building tree allometry relationships based on TLS point clouds and machine learning regression. <em>Applied Sciences</em>, <em>11</em>(21), 10139.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/APP112110139" target="_blank">10.3390/APP112110139</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[2]</div>
-          <span class="ref-authors">Aubry-Kientz, M., Dutrieux, R., Ferraz, A., Saatchi, S., Hamraz, H., Williams, J., Coomes, D., Piboule, A., &amp; Vincent, G.</span> (2019). A comparative assessment of the performance of individual tree crowns delineation algorithms from ALS data in tropical forests. <em>Remote Sensing</em>, <em>11</em>(9), 1086.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/RS11091086" target="_blank">10.3390/RS11091086</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[3]</div>
-          <span class="ref-authors">Avsar, M. D.</span> (2003). The relationships between diameter at breast height, tree height and crown diameter in Calabrian pines (<em>Pinus brutia</em> Ten.) of Baskonus Mountain, Kahramanmaras, Turkey. <em>Journal of Biological Sciences</em>, <em>3</em>(4), 715–719.
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[4]</div>
-          <span class="ref-authors">Balenović, I., Jazbec, A., Marjanović, H., Paladinić, E., &amp; Vuletić, D.</span> (2015). Modeling tree characteristics of individual black pine (<em>Pinus nigra</em> Arn.) trees for use in remote sensing-based inventory. <em>Forests</em>, <em>6</em>(2), 492–512.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/F6020492" target="_blank">10.3390/F6020492</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[5]</div>
-          <span class="ref-authors">Bechtold, W. A.</span> (2002). Comparison of field methods and models to estimate mean crown diameter. <em>Northern Journal of Applied Forestry</em>, <em>19</em>(4), 177–182.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1093/NJAF/19.4.177" target="_blank">10.1093/NJAF/19.4.177</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[6]</div>
           <span class="ref-authors">Bechtold, W. A.</span> (2003). Crown-diameter prediction models for 87 species of stand-grown trees in the eastern United States. <em>Southern Journal of Applied Forestry</em>, <em>27</em>(4), 269–278.
           <div class="ref-doi">DOI: <a href="https://doi.org/10.1093/SJAF/27.4.269" target="_blank">10.1093/SJAF/27.4.269</a></div>
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[7]</div>
+          <div class="ref-num">[2]</div>
           <span class="ref-authors">Bechtold, W. A.</span> (2004). Largest-crown-width prediction models for 53 species in the western United States. <em>Western Journal of Applied Forestry</em>, <em>19</em>(4), 245–251.
           <div class="ref-doi">DOI: <a href="https://doi.org/10.1093/WJAF/19.4.245" target="_blank">10.1093/WJAF/19.4.245</a></div>
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[8]</div>
-          <span class="ref-authors">Biging, G. S., &amp; Wensel, L. C.</span> (1990). Estimation of crown form for six conifer species of northern California. <em>Canadian Journal of Forest Research</em>, <em>20</em>(10), 1471–1478.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1139/X90-151" target="_blank">10.1139/X90-151</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[9]</div>
-          <span class="ref-authors">Blanchard, E., Birnbaum, P., Ibanez, T., Boutreux, T., Antin, C., Ploton, P., … Couteron, P.</span> (2016). Contrasted allometries between stem diameter, crown area, and tree height in five tropical biogeographic areas. <em>Trees – Structure and Function</em>, <em>30</em>(6), 1953–1968.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1007/S00468-016-1424-3" target="_blank">10.1007/S00468-016-1424-3</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[10]</div>
-          <span class="ref-authors">Bragg, D. C.</span> (2001). A local basal area adjustment for crown width prediction. <em>Northern Journal of Applied Forestry</em>, <em>18</em>(1), 22–28.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1093/NJAF/18.1.22" target="_blank">10.1093/NJAF/18.1.22</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[11]</div>
-          <span class="ref-authors">Brown, P. L., Doley, D., &amp; Keenan, R. J.</span> (2000). Estimating tree crown dimensions using digital analysis of vertical photographs. <em>Agricultural and Forest Meteorology</em>, <em>100</em>(2–3), 199–212.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1016/S0168-1923(99)00138-0" target="_blank">10.1016/S0168-1923(99)00138-0</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[12]</div>
-          <span class="ref-authors">Buba, T.</span> (2012). Prediction equations for estimating tree height, crown diameter, crown height and crown ratio of <em>Parkia biglobosa</em> in the Nigerian guinea savanna. <em>African Journal of Agricultural Research</em>, <em>7</em>(31), 4tallí.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.5897/AJAR12.276" target="_blank">10.5897/AJAR12.276</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[13]</div>
-          <span class="ref-authors">Bueno, G. F., Costa, E. A., Finger, C. A. G., Liesenberg, V., &amp; Bispo, P. C.</span> (2022). Machine learning: crown diameter predictive modeling for open-grown trees in the Cerrado biome, Brazil. <em>Forests</em>, <em>13</em>(8), 1295.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/f13081295" target="_blank">10.3390/f13081295</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[14]</div>
-          <span class="ref-authors">Burkhardt, A.</span> (2022). Nonlinear quantile mixed-effects models for prediction of the maximum crown width of <em>Fagus sylvatica</em> L., <em>Pinus nigra</em> Arn. and <em>Pinus brutia</em> Ten. <em>Forests</em>, <em>13</em>(4), 499.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/f13040499" target="_blank">10.3390/f13040499</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[15]</div>
-          <span class="ref-authors">Cañadas, Á., Korol, M., Zambrano, C. H., &amp; Camacho, B.</span> (2012). Modelos descriptivos de corona para Laurel (<em>Cordia alliodora</em>) bajo sistemas agroforestales en el Bosque Protector Sumaco, Ecuador. <em>Avances en Ciencias e Ingenierías</em>, <em>4</em>(2).
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.18272/ACI.V4I2.103" target="_blank">10.18272/ACI.V4I2.103</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[16]</div>
-          <span class="ref-authors">Chatziathanasiou, S., Kitikidou, K., &amp; Milios, E.</span> (2024). Crown width–tree height models for <em>Magnolia grandiflora</em>, <em>Prunus cerasifera</em>, and <em>Acer negundo</em> growing in cities in northeastern Greece. <em>Land</em>, <em>13</em>(10), 1579.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/land13101579" target="_blank">10.3390/land13101579</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[17]</div>
-          <span class="ref-authors">Chopping, M.</span> (2011). CANAPI: canopy analysis with panchromatic imagery. <em>Remote Sensing Letters</em>, <em>2</em>(1), 21–29.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1080/01431161.2010.486805" target="_blank">10.1080/01431161.2010.486805</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[18]</div>
+          <div class="ref-num">[3]</div>
           <span class="ref-authors">City of Hamilton Open Data.</span> (n.d.). <em>Public tree inventory</em>. Retrieved from <a href="https://open.hamilton.ca/datasets/08e50c6cbb2545b4897d613a817fa4d4_0/explore" target="_blank" style="color:var(--c-2030)">open.hamilton.ca</a>
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[19]</div>
+          <div class="ref-num">[4]</div>
           <span class="ref-authors">City of Hamilton Open Data.</span> (n.d.). <em>Trees planted dataset</em>. Retrieved from <a href="https://open.hamilton.ca/datasets/02d4661f34e54a5eb06e17001952681f_19/explore" target="_blank" style="color:var(--c-2030)">open.hamilton.ca</a>
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[20]</div>
-          <span class="ref-authors">Coombes, A., Martin, J. H., &amp; Slater, D.</span> (2019). Defining the allometry of stem and crown diameter of urban trees. <em>Urban Forestry &amp; Urban Greening</em>, <em>44</em>, 126421.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1016/J.UFUG.2019.126421" target="_blank">10.1016/J.UFUG.2019.126421</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[21]</div>
-          <span class="ref-authors">Coulston, J. W., Moisen, G. G., Wilson, B. T., Finco, M., Cohen, W. B., &amp; Brewer, C. K.</span> (2012). Modeling percent tree canopy cover: a pilot study. <em>Photogrammetric Engineering and Remote Sensing</em>, <em>78</em>(7), 715–727.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.14358/PERS.78.7.715" target="_blank">10.14358/PERS.78.7.715</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[22]</div>
-          <span class="ref-authors">Ducey, M. J.</span> (2009). Predicting crown size and shape from simple stand variables. <em>Journal of Sustainable Forestry</em>, <em>28</em>(1–2), 102–117.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1080/10549810802320076" target="_blank">10.1080/10549810802320076</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[23]</div>
-          <span class="ref-authors">Duncanson, L., Dubayah, R., &amp; Enquist, B. J.</span> (2015). Assessing the general patterns of forest structure: quantifying tree and forest allometric scaling relationships in the United States. <em>Global Ecology and Biogeography</em>, <em>24</em>(12), 1465–1475.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1111/GEB.12371" target="_blank">10.1111/GEB.12371</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[24]</div>
-          <span class="ref-authors">Falkowski, M. J., Smith, A. M. S., Gessler, P. E., Hudak, A. T., Vierling, L. A., &amp; Evans, J. S.</span> (2008). The influence of conifer forest canopy cover on the accuracy of two individual tree measurement algorithms using lidar data. <em>Canadian Journal of Remote Sensing</em>, <em>34</em>(S2), S338–S350.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.5589/M08-055" target="_blank">10.5589/M08-055</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[25]</div>
-          <span class="ref-authors">Forrester, D. I., Benneter, A., Bouriaud, O., &amp; Bauhus, J.</span> (2017). Diversity and competition influence tree allometric relationships – developing functions for mixed-species forests. <em>Journal of Ecology</em>, <em>105</em>(3), 761–774.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1111/1365-2745.12704" target="_blank">10.1111/1365-2745.12704</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[26]</div>
-          <span class="ref-authors">Fu, L., Xiang, W., Wang, G., Hao, K., &amp; Tang, S.</span> (2017). Additive crown width models comprising nonlinear simultaneous equations for Prince Rupprecht larch (<em>Larix principis-rupprechtii</em>) in northern China. <em>Trees – Structure and Function</em>, <em>31</em>(5), 1661–1673.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1007/S00468-017-1600-0" target="_blank">10.1007/S00468-017-1600-0</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[27]</div>
-          <span class="ref-authors">Gao, T., Gao, Z., Sun, B., Qin, P., Li, Y., &amp; Yan, Z.</span> (2022). An integrated method for estimating forest-canopy closure based on UAV LiDAR data. <em>Remote Sensing</em>, <em>14</em>(17), 4317.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/rs14174317" target="_blank">10.3390/rs14174317</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[28]</div>
-          <span class="ref-authors">Gering, L. R., &amp; May, D. M.</span> (1995). The relationship of diameter at breast height and crown diameter for four species groups in Hardin County, Tennessee. <em>Southern Journal of Applied Forestry</em>, <em>19</em>(4), 177–181.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1093/SJAF/19.4.177" target="_blank">10.1093/SJAF/19.4.177</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[29]</div>
-          <span class="ref-authors">Gill, S. J., Biging, G. S., &amp; Murphy, E. C.</span> (2000). Modeling conifer tree crown radius and estimating canopy cover. <em>Forest Ecology and Management</em>, <em>126</em>(3), 405–416.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1016/S0378-1127(99)00113-9" target="_blank">10.1016/S0378-1127(99)00113-9</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[30]</div>
-          <span class="ref-authors">Goodman, R. C., Phillips, O. L., &amp; Baker, T. R.</span> (2014). The importance of crown dimensions to improve tropical tree biomass estimates. <em>Ecological Applications</em>, <em>24</em>(4), 680–698.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1890/13-0070.1" target="_blank">10.1890/13-0070.1</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[31]</div>
-          <span class="ref-authors">Gray, A. N., McIntosh, A. C. S., Garman, S. L., &amp; Shettles, M. A.</span> (2021). Predicting canopy cover of diverse forest types from individual tree measurements. <em>Forest Ecology and Management</em>, <em>489</em>, 119082.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1016/J.FORECO.2021.119682" target="_blank">10.1016/J.FORECO.2021.119682</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[32]</div>
-          <span class="ref-authors">Grote, R.</span> (2003). Estimation of crown radii and crown projection area from stem size and tree position. <em>Annals of Forest Science</em>, <em>60</em>(5), 393–402.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1051/FOREST:2003031" target="_blank">10.1051/FOREST:2003031</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[33]</div>
-          <span class="ref-authors">Han, X.</span> (2023). Estimation forest stand crown based on high spatial resolution imagery. <em>Proceedings of CVIDL 2023</em>, 1–4.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1109/CVIDL58838.2023.10165711" target="_blank">10.1109/CVIDL58838.2023.10165711</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[34]</div>
-          <span class="ref-authors">Hann, D. W.</span> (1999). An adjustable predictor of crown profile for stand-grown Douglas-fir trees. <em>Forest Science</em>, <em>45</em>(2), 217–225.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1093/FORESTSCIENCE/45.2.217" target="_blank">10.1093/FORESTSCIENCE/45.2.217</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[35]</div>
-          <span class="ref-authors">Hein, S., &amp; Spiecker, H.</span> (2008). Crown and tree allometry of open-grown ash (<em>Fraxinus excelsior</em> L.) and sycamore (<em>Acer pseudoplatanus</em> L.). <em>Agroforestry Systems</em>, <em>73</em>(2), 205–218.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1007/S10457-008-9145-2" target="_blank">10.1007/S10457-008-9145-2</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[36]</div>
-          <span class="ref-authors">Hernández-Ramos, J., Ángeles-Pérez, G., Pérez-Miranda, R., Reyes-Hernández, V. J., &amp; Razo-Zárate, R.</span> (2022). Morfometría de copa para <em>Quercus crassifolia</em> Humb. &amp; Bonpl. y <em>Quercus rugosa</em> Née en Hidalgo, México. <em>Ciencia Florestal</em>, <em>32</em>(3), 1484–1503.
+          <div class="ref-num">[5]</div>
+          <span class="ref-authors">Hernández-Ramos, J., Ángeles-Pérez, G., Pérez-Miranda, R., et al.</span> (2022). Morfometría de copa para <em>Quercus crassifolia</em> Humb. &amp; Bonpl. y <em>Quercus rugosa</em> Née en Hidalgo, México. <em>Ciencia Florestal</em>, <em>32</em>(3), 1484–1503.
           <div class="ref-doi">DOI: <a href="https://doi.org/10.5902/1980509865276" target="_blank">10.5902/1980509865276</a></div>
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[37]</div>
-          <span class="ref-authors">Hou, R., &amp; Chai, Z.</span> (2022). Predicting crown width using nonlinear mixed-effects models accounting for competition in multi-species secondary forests. <em>PeerJ</em>, <em>10</em>, e13105.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.7717/peerj.13105" target="_blank">10.7717/peerj.13105</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[38]</div>
-          <span class="ref-authors">Ibrahim, E. M. M., Osman, E. H., Idris, E. A., &amp; Yousif, T. A.</span> (2015). Linear and non-linear regression equations for estimating the crown diameter of three Sudanese edible trees. <em>Forest Products Industries</em>, <em>4</em>(2), 44–52.
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[39]</div>
-          <span class="ref-authors">Jennings, S. B., Brown, N., &amp; Sheil, D.</span> (1999). Assessing forest canopies and understorey illumination: canopy closure, canopy cover and other measures. <em>Forestry</em>, <em>72</em>(1), 59–74.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1093/FORESTRY/72.1.59" target="_blank">10.1093/FORESTRY/72.1.59</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[40]</div>
-          <span class="ref-authors">Jucker, T., Caspersen, J., Chave, J., Antin, C., Barbier, N., Bongers, F., … Coomes, D. A.</span> (2017). Allometric equations for integrating remote sensing imagery into forest monitoring programmes. <em>Global Change Biology</em>, <em>23</em>(1), 177–190.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1111/GCB.13388" target="_blank">10.1111/GCB.13388</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[41]</div>
-          <span class="ref-authors">Kalliovirta, J., &amp; Tokola, T.</span> (2004). Functions for estimating stem diameter and tree age using tree height, crown width and existing stand database information. <em>Silva Fennica</em>, <em>38</em>(3), 227–248.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.14214/SF.386" target="_blank">10.14214/SF.386</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[42]</div>
-          <span class="ref-authors">King, K. L., &amp; Locke, D. H.</span> (2013). A comparison of three methods for measuring local urban tree canopy cover. <em>Arboriculture and Urban Forestry</em>, <em>39</em>(2), 62–67.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.48044/JAUF.2013.009" target="_blank">10.48044/JAUF.2013.009</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[43]</div>
-          <span class="ref-authors">Korhonen, L., Korhonen, K. T., Rautiainen, M., &amp; Stenberg, P.</span> (2006). Estimation of forest canopy cover: a comparison of field measurement techniques. <em>Silva Fennica</em>, <em>40</em>(4), 577–588.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.14214/SF.315" target="_blank">10.14214/SF.315</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[44]</div>
-          <span class="ref-authors">Lee, J.-H., Ko, Y., &amp; McPherson, E. G.</span> (2016). The feasibility of remotely sensed data to estimate urban tree dimensions and biomass. <em>Urban Forestry &amp; Urban Greening</em>, <em>16</em>, 208–220.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1016/J.UFUG.2016.02.010" target="_blank">10.1016/J.UFUG.2016.02.010</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[45]</div>
+          <div class="ref-num">[6]</div>
           <span class="ref-authors">Lin, W., Meng, Y., Qiu, Z., Zhang, S., &amp; Wu, J.</span> (2017). Measurement and calculation of crown projection area and crown volume of individual trees based on 3D laser-scanned point-cloud data. <em>International Journal of Remote Sensing</em>, <em>38</em>(4), 1083–1100.
           <div class="ref-doi">DOI: <a href="https://doi.org/10.1080/01431161.2016.1265690" target="_blank">10.1080/01431161.2016.1265690</a></div>
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[46]</div>
-          <span class="ref-authors">Lockhart, B. R., Weih, R. C., Jr., &amp; Smith, K. M.</span> (2005). Crown radius and diameter at breast height relationships for six bottomland hardwood species. <em>Journal of the Arkansas Academy of Science</em>, <em>59</em>, 110–115.
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[47]</div>
+          <div class="ref-num">[7]</div>
           <span class="ref-authors">Martin, N. A., Chappelka, A. H., Loewenstein, E. F., Keever, G. J., &amp; Somers, G. L.</span> (2012). Predictive open-grown crown width equations for three oak species planted in a southern urban locale. <em>Arboriculture &amp; Urban Forestry</em>, <em>38</em>(2), 58–63.
           <div class="ref-doi">DOI: <a href="https://doi.org/10.48044/JAUF.2012.010" target="_blank">10.48044/JAUF.2012.010</a></div>
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[48]</div>
-          <span class="ref-authors">Miranda-Fuentes, A., Llorens, J., Gamarra-Diezma, J. L., Gil-Ribes, J. A., &amp; Gil, E.</span> (2015). Towards an optimized method of olive tree crown volume measurement. <em>Sensors</em>, <em>15</em>(3), 3671–3687.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/S150203671" target="_blank">10.3390/S150203671</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[49]</div>
-          <span class="ref-authors">O'Brien, S. T., Hubbell, S. P., Spiro, P., Condit, R., &amp; Foster, R. B.</span> (1995). Diameter, height, crown, and age relationship in eight neotropical tree species. <em>Ecology</em>, <em>76</em>(6), 1926–1939.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.2307/1940724" target="_blank">10.2307/1940724</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[50]</div>
-          <span class="ref-authors">Paletto, A., &amp; Tosi, V.</span> (2009). Forest canopy cover and canopy closure: comparison of assessment techniques. <em>European Journal of Forest Research</em>, <em>128</em>(3), 265–272.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1007/S10342-009-0262-X" target="_blank">10.1007/S10342-009-0262-X</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[51]</div>
+          <div class="ref-num">[8]</div>
           <span class="ref-authors">Peper, P. J., McPherson, E. G., &amp; Mori, S. M.</span> (2001). Equations for predicting diameter, height, crown width, and leaf area of San Joaquin Valley street trees. <em>Journal of Arboriculture</em>, <em>27</em>(6), 306–317.
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[52]</div>
-          <span class="ref-authors">Pekin, B. K., &amp; Macfarlane, C.</span> (2009). Measurement of crown cover and leaf area index using digital cover photography and its application to remote sensing. <em>Remote Sensing</em>, <em>1</em>(4), 1298–1320.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/RS1041298" target="_blank">10.3390/RS1041298</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[53]</div>
-          <span class="ref-authors">Ploton, P., Barbier, N., Momo, S. T., Réjou-Méchain, M., Bosela, F. B., Chuyong, G., … Pélissier, R.</span> (2016). Closing a gap in tropical forest biomass estimation: taking crown mass variation into account in pantropical allometries. <em>Biogeosciences</em>, <em>13</em>(5), 1571–1585.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.5194/BG-13-1571-2016" target="_blank">10.5194/BG-13-1571-2016</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[54]</div>
-          <span class="ref-authors">Pretzsch, H., Biber, P., Uhl, E., Daumer, E., Schäfermeyer, K., &amp; Prévosto, B.</span> (2015). Crown size and growing space requirement of common tree species in urban centres, parks, and forests. <em>Urban Forestry &amp; Urban Greening</em>, <em>14</em>(3), 466–479.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1016/J.UFUG.2015.04.006" target="_blank">10.1016/J.UFUG.2015.04.006</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[55]</div>
+          <div class="ref-num">[9]</div>
           <span class="ref-authors">Raptis, D., Kazana, V., Kazaklis, A., &amp; Stamatiou, C.</span> (2018). A crown width-diameter model for natural even-aged black pine forest management. <em>Forests</em>, <em>9</em>(10), 610.
           <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/F9100610" target="_blank">10.3390/F9100610</a></div>
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[56]</div>
-          <span class="ref-authors">Ritter, T., &amp; Nothdurft, A.</span> (2018). Automatic assessment of crown projection area on single trees and stand-level, based on three-dimensional point clouds derived from terrestrial laser-scanning. <em>Forests</em>, <em>9</em>(5), 237.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/F9050237" target="_blank">10.3390/F9050237</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[57]</div>
-          <span class="ref-authors">Roundy, D. B., Hulet, A., Roundy, B. A., Jensen, R. R., Hinkle, J. B., Crook, L., &amp; Petersen, S. L.</span> (2016). Estimating pinyon and juniper cover across Utah using NAIP imagery. <em>Environmental Sciences</em>, <em>3</em>(4), 765–777.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3934/ENVIRONSCI.2016.4.765" target="_blank">10.3934/ENVIRONSCI.2016.4.765</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[58]</div>
-          <span class="ref-authors">Russell, M. B., &amp; Weiskittel, A. R.</span> (2011). Maximum and largest crown width equations for 15 tree species in Maine. <em>Northern Journal of Applied Forestry</em>, <em>28</em>(2), 84–91.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1093/NJAF/28.2.84" target="_blank">10.1093/NJAF/28.2.84</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[59]</div>
+          <div class="ref-num">[10]</div>
           <span class="ref-authors">Russell, M. B., &amp; Weiskittel, A. R.</span> (2012). Estimating tree crown widths for the primary Acadian species in Maine. <em>Northern Journal of Applied Forestry</em>, <em>29</em>(2), 66–73.
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[60]</div>
-          <span class="ref-authors">Sánchez-González, M., Cañellas, I., &amp; Montero, G.</span> (2007). Generalized height-diameter and crown diameter prediction models for cork oak forests in Spain. <em>Forest Systems</em>, <em>16</em>(1), 76–88.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.5424/SRF/2007161-00999" target="_blank">10.5424/SRF/2007161-00999</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[61]</div>
-          <span class="ref-authors">Sharma, R. P., Bílek, L., Vacek, Z., &amp; Vacek, S.</span> (2017). Modelling crown width–diameter relationship for Scots pine in the central Europe. <em>Trees – Structure and Function</em>, <em>31</em>(6), 1875–1889.
+          <div class="ref-num">[11]</div>
+          <span class="ref-authors">Sharma, R. P., Bílek, L., Vacek, Z., &amp; Vacek, S.</span> (2017). Modelling crown width–diameter relationship for Scots pine in the central Europe. <em>Trees</em>, <em>31</em>(6), 1875–1889.
           <div class="ref-doi">DOI: <a href="https://doi.org/10.1007/S00468-017-1593-8" target="_blank">10.1007/S00468-017-1593-8</a></div>
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[62]</div>
-          <span class="ref-authors">Sharma, R. P., Vacek, Z., &amp; Vacek, S.</span> (2016). Modelling tree crown-to-bole diameter ratio for Norway spruce and European beech. <em>Silva Fennica</em>, <em>50</em>(1), 1740.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.14214/SF.1740" target="_blank">10.14214/SF.1740</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[63]</div>
-          <span class="ref-authors">Shashkov, M., Ivanova, N., Shanin, V., &amp; Grabarnik, P.</span> (2019). Ground surveys versus UAV photography: the comparison of two tree crown mapping techniques. In <em>Lecture Notes in Computer Science</em> (pp. 48–56). Springer.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1007/978-3-030-11720-7_8" target="_blank">10.1007/978-3-030-11720-7_8</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[64]</div>
+          <div class="ref-num">[12]</div>
           <span class="ref-authors">Sönmez, T.</span> (2009). Diameter at breast height-crown diameter prediction models for <em>Picea orientalis</em>. <em>African Journal of Agricultural Research</em>, <em>4</em>(3), 215–219.
           <div class="ref-doi">DOI: <a href="https://doi.org/10.5897/AJAR.9000171" target="_blank">10.5897/AJAR.9000171</a></div>
         </div>
 
         <div class="ref-item">
-          <div class="ref-num">[65]</div>
-          <span class="ref-authors">Štāls, T. A., Bārdule, A., Dūmiņš, K., Makovskis, K., &amp; Lazdiņa, D.</span> (2023). Remote-sensed tree crown diameter as a predictor of stem diameter and above-ground biomass in <em>Betula pendula</em> and <em>Populus tremuloides × P. tremula</em> plantations. <em>Land</em>, <em>12</em>(11), 2006.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/land12112006" target="_blank">10.3390/land12112006</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[66]</div>
+          <div class="ref-num">[13]</div>
           <span class="ref-authors">USDA Natural Resources Conservation Service.</span> (n.d.). <em>PLANTS Database — Characteristics Search</em>. United States Department of Agriculture. Retrieved from <a href="https://plants.usda.gov/characteristics-search" target="_blank" style="color:var(--c-2030)">plants.usda.gov</a>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[67]</div>
-          <span class="ref-authors">Verma, N. K., Lamb, D., Reid, N., &amp; Wilson, B.</span> (2014). An allometric model for estimating DBH of isolated and clustered Eucalyptus trees from measurements of crown projection area. <em>Forest Ecology and Management</em>, <em>326</em>, 125–132.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1016/J.FORECO.2014.04.003" target="_blank">10.1016/J.FORECO.2014.04.003</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[68]</div>
-          <span class="ref-authors">Wang, J., Jiang, L., Xin, S. D., Wang, Y., He, P., &amp; Yan, Y.</span> (2023). Two new methods applied to crown width additive models: a case study for three tree species in northeastern China. <em>Annals of Forest Science</em>, <em>80</em>(1), 2.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1186/s13595-022-01165-5" target="_blank">10.1186/s13595-022-01165-5</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[69]</div>
-          <span class="ref-authors">Westfall, J. A., Nowak, D. J., Henning, J. G., Lister, T. W., Edgar, C. B., Majewsky, M. A., &amp; Sonti, N. F.</span> (2020). Crown width models for woody plant species growing in urban areas of the U.S. <em>Urban Ecosystems</em>, <em>23</em>(4), 905–917.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1007/S11252-020-00988-2" target="_blank">10.1007/S11252-020-00988-2</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[70]</div>
-          <span class="ref-authors">Wu, X., Shen, X., Cao, L., Wang, G., &amp; Cao, F.</span> (2019). Assessment of individual tree detection and canopy cover estimation using unmanned aerial vehicle based LiDAR (UAV-LiDAR) data in planted forests. <em>Remote Sensing</em>, <em>11</em>(8), 908.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/RS11080908" target="_blank">10.3390/RS11080908</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[71]</div>
-          <span class="ref-authors">Yang, Y., Wang, W., Zeng, W., Wang, J., &amp; Meng, J.</span> (2020). Development of crown ratio and height to crown base models for Masson pine in southern China. <em>Forests</em>, <em>11</em>(11), 1216.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.3390/F11111216" target="_blank">10.3390/F11111216</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[72]</div>
-          <span class="ref-authors">YangYuqing, &amp; HuangShongming.</span> (2017). Allometric modelling of crown width for white spruce by fixed- and mixed-effects models. <em>Forestry Chronicle</em>, <em>93</em>(2), 138–147.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.5558/TFC2017-020" target="_blank">10.5558/TFC2017-020</a></div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-num">[73]</div>
-          <span class="ref-authors">Zhu, Z., Kleinn, C., &amp; Nölke, N.</span> (2021). Assessing tree crown volume — a review. <em>Forestry: An International Journal of Forest Research</em>, <em>94</em>(1), 18–35.
-          <div class="ref-doi">DOI: <a href="https://doi.org/10.1093/FORESTRY/CPAA037" target="_blank">10.1093/FORESTRY/CPAA037</a></div>
         </div>
 
       </div>
     </div>
-    <div class="modal-footer">73 referencias · Alometría de copa · Medición de dosel · Silvicultura urbana</div>
+    <div class="modal-footer">10 peer-reviewed articles · 3 open datasets · Urban Tree Inventory</div>
   </div>
 </div>
 
@@ -1196,103 +806,88 @@ function closeRefs() {
 function closeRefsOutside(e) {
   if (e.target === document.getElementById('refs-modal')) closeRefs();
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeRefs(); closeRanking(); } });
+document.addEventListener('keydown', e => { if(e.key==='Escape'){closeRefs();closeRanking();} });
 
-// ── RANKING DATA ──────────────────────────────────────────────
-const RANK_DATA = [{"scientific": "Tilia spp.", "common": "Linden Tilia Spp.", "score": 1.0, "risk": "High Risk"}, {"scientific": "Salix spp.", "common": "Misc Willow", "score": 0.85928, "risk": "High Risk"}, {"scientific": "Prunus nigra", "common": "Canadian Plum", "score": 0.857687, "risk": "High Risk"}, {"scientific": "Ginkgo biloba", "common": "Ginkgo", "score": 0.818915, "risk": "High Risk"}, {"scientific": "Ginkgo biloba 'Princeton Sentry'", "common": "Princeton Sentry Ginkgo", "score": 0.818692, "risk": "High Risk"}, {"scientific": "Magnolia x soulangiana", "common": "Saucer Magnolia", "score": 0.768004, "risk": "High Risk"}, {"scientific": "Magnolia x soulangeana 'alexandrina'", "common": "Alexandrina Saucer Magnolia", "score": 0.766241, "risk": "High Risk"}, {"scientific": "Tsuga caroliniana", "common": "Carolina Hemlock", "score": 0.758357, "risk": "High Risk"}, {"scientific": "Salix matsudana 'tortuosa'", "common": "Corkscrew Willow", "score": 0.731864, "risk": "High Risk"}, {"scientific": "Salix nigra", "common": "Black Willow", "score": 0.731536, "risk": "High Risk"}, {"scientific": "Pinus sylvestris", "common": "Scotch Pine", "score": 0.721026, "risk": "High Risk"}, {"scientific": "Salix fragilis", "common": "Crack Willow", "score": 0.717089, "risk": "High Risk"}, {"scientific": "Betula pendula", "common": "European Birch", "score": 0.707316, "risk": "High Risk"}, {"scientific": "Magnolia x soulangeana 'black tulip'", "common": "Black Tulip Magnolia", "score": 0.685706, "risk": "High Risk"}, {"scientific": "Philadelphus coronarius", "common": "Mock Orange", "score": 0.68264, "risk": "High Risk"}, {"scientific": "Magnolia stellata", "common": "Star Magnolia", "score": 0.670946, "risk": "High Risk"}, {"scientific": "Magnolia 'susan'", "common": "Susan Magnolia", "score": 0.668423, "risk": "High Risk"}, {"scientific": "Pinus nigra", "common": "Austrian Pine", "score": 0.654222, "risk": "High Risk"}, {"scientific": "Abies balsamea", "common": "Balsam Fir", "score": 0.650214, "risk": "High Risk"}, {"scientific": "Pyrus calleryana 'bradford'", "common": "Bradford Pear", "score": 0.643802, "risk": "High Risk"}, {"scientific": "Pyrus calleryana 'chanticleer'", "common": "Chanticleer Ornamental Pear", "score": 0.643802, "risk": "High Risk"}, {"scientific": "Taxodium distichum", "common": "Common Bald Cyprus", "score": 0.633977, "risk": "High Risk"}, {"scientific": "Magnolia x loebneri", "common": "Loebner Magnolia", "score": 0.625186, "risk": "High Risk"}, {"scientific": "Magnolia x loebneri", "common": "White Pine", "score": 0.622882, "risk": "High Risk"}, {"scientific": "Pinus strobus", "common": "Eastern White Pine", "score": 0.622662, "risk": "High Risk"}, {"scientific": "Pinus spp.", "common": "Misc Pine", "score": 0.622141, "risk": "High Risk"}, {"scientific": "Castanea dentata", "common": "American Chestnut", "score": 0.615337, "risk": "High Risk"}, {"scientific": "Castanea dentata", "common": "Hoptree", "score": 0.608319, "risk": "High Risk"}, {"scientific": "Ptelea trifoliata", "common": "Common Hoptree", "score": 0.607668, "risk": "High Risk"}, {"scientific": "Fraxinus spp.", "common": "Ash Spp.", "score": 0.601388, "risk": "High Risk"}, {"scientific": "Pyrus calleryana", "common": "Callery Pear", "score": 0.600473, "risk": "High Risk"}, {"scientific": "Pinus mugo", "common": "Mugo Pine", "score": 0.598578, "risk": "High Risk"}, {"scientific": "Abies fraseri", "common": "Fraser Fir", "score": 0.589738, "risk": "High Risk"}, {"scientific": "Magnolia stellata 'royal star'", "common": "Royal Star Magnolia", "score": 0.589569, "risk": "High Risk"}, {"scientific": "Magnolia x loebneri 'leonard messel'", "common": "Leonard Messel Loebner Magnolia", "score": 0.589569, "risk": "High Risk"}, {"scientific": "Magnolia x loebneri 'merrill'", "common": "Merrill Magnolia", "score": 0.589511, "risk": "High Risk"}, {"scientific": "Taxus baccata", "common": "Common Yew", "score": 0.589116, "risk": "High Risk"}, {"scientific": "Larix kaempferi", "common": "Japanese Larch", "score": 0.58874, "risk": "High Risk"}, {"scientific": "Salix babylonica", "common": "Weeping Willow", "score": 0.585803, "risk": "High Risk"}, {"scientific": "Taxus cuspidata", "common": "Japanese Yew", "score": 0.58568, "risk": "High Risk"}, {"scientific": "Picea abies", "common": "Norway Spruce", "score": 0.580349, "risk": "High Risk"}, {"scientific": "Pinus banksiana", "common": "Jack Pine", "score": 0.566496, "risk": "High Risk"}, {"scientific": "Crataegus spp.", "common": "Hawthorn", "score": 0.559914, "risk": "High Risk"}, {"scientific": "Zelkova serrata", "common": "Japanese Zelkova", "score": 0.556529, "risk": "High Risk"}, {"scientific": "Zelkova serrata 'green vase", "common": "Green Vase Zelkova", "score": 0.556259, "risk": "High Risk"}, {"scientific": "Tsuga canadensis", "common": "Eastern Hemlock", "score": 0.55271, "risk": "High Risk"}, {"scientific": "Pinus parviflora", "common": "Five-Needle Pine", "score": 0.542755, "risk": "High Risk"}, {"scientific": "Pinus bungeana", "common": "Lacebark Pine", "score": 0.542484, "risk": "High Risk"}, {"scientific": "Betula lenta", "common": "Cherry Birch", "score": 0.534506, "risk": "High Risk"}, {"scientific": "Betula lenta", "common": "Pin Oak", "score": 0.529181, "risk": "High Risk"}, {"scientific": "Juglans regia", "common": "English Walnut", "score": 0.529112, "risk": "High Risk"}, {"scientific": "Quercus palustris", "common": "Freeman Maple", "score": 0.527233, "risk": "High Risk"}, {"scientific": "Larix decidua", "common": "European Larch", "score": 0.52676, "risk": "High Risk"}, {"scientific": "Thuja occidentalis", "common": "White Cedar", "score": 0.52142, "risk": "High Risk"}, {"scientific": "Thuja occldentalis", "common": "Eastern White Cedar", "score": 0.52142, "risk": "High Risk"}, {"scientific": "Chamaecyparis spp.", "common": "False Cyprus", "score": 0.520978, "risk": "High Risk"}, {"scientific": "Lmus x 'pioneer'", "common": "Pioneer Elm", "score": 0.52054, "risk": "High Risk"}, {"scientific": "Sorbus aucuparia", "common": "European Mountain Ash", "score": 0.519741, "risk": "High Risk"}, {"scientific": "Sorbus thuringiaca", "common": "Oakleaf Mountain Ash", "score": 0.519741, "risk": "High Risk"}, {"scientific": "Pinus flexilis", "common": "Limber Pine", "score": 0.512861, "risk": "High Risk"}, {"scientific": "Carpinus caroliniana", "common": "American Hornbeam / Blue Beech", "score": 0.511768, "risk": "High Risk"}, {"scientific": "Carpinus caroliniana", "common": "Blue Beech", "score": 0.511768, "risk": "High Risk"}, {"scientific": "Carpinus japonica", "common": "Japanese Hornbeam", "score": 0.511738, "risk": "High Risk"}, {"scientific": "Acer platanoides", "common": "Norway Maple", "score": 0.507506, "risk": "High Risk"}, {"scientific": "Acer platanoides", "common": "Tuliptree", "score": 0.507056, "risk": "High Risk"}, {"scientific": "Liriodendron tulipifera 'Fastigiatum'", "common": "Columnar Tuliptree", "score": 0.506888, "risk": "High Risk"}, {"scientific": "Liriodendron tulipifera", "common": "Athena Lacebark Elm", "score": 0.506765, "risk": "High Risk"}, {"scientific": "Liriodendron tulipifera", "common": "Freeman Maple", "score": 0.506765, "risk": "High Risk"}, {"scientific": "Liriodendron tulipifera", "common": "Ironwood", "score": 0.506765, "risk": "High Risk"}, {"scientific": "Liriodendron tulipifera 'aureomarginatum'", "common": "Variegated Tuliptree", "score": 0.506765, "risk": "High Risk"}, {"scientific": "Acer platanoides 'globosum'", "common": "Globe Maple", "score": 0.506699, "risk": "High Risk"}, {"scientific": "Acer platanoides 'drummondii'", "common": "Harlequin Maple", "score": 0.505947, "risk": "High Risk"}, {"scientific": "Acer miyabei", "common": "Miyabe Maple", "score": 0.505913, "risk": "High Risk"}, {"scientific": "Acer miyabei", "common": "State Street Maple", "score": 0.505466, "risk": "High Risk"}, {"scientific": "Acer truncatum", "common": "Purpleblow Maple", "score": 0.502464, "risk": "Moderate Risk"}, {"scientific": "Ulmus spp.", "common": "Elm Spp.", "score": 0.499924, "risk": "Moderate Risk"}, {"scientific": "Ulmus spp.", "common": "London Plane", "score": 0.498044, "risk": "Moderate Risk"}, {"scientific": "Populus nigra 'italica'", "common": "Lombardy Black Poplar", "score": 0.497871, "risk": "Moderate Risk"}, {"scientific": "Platanus x acerifolia 'bloodgood'", "common": "Bloodgood London Planetree", "score": 0.497693, "risk": "Moderate Risk"}, {"scientific": "Platanus x acerifolia", "common": " ", "score": 0.496572, "risk": "Moderate Risk"}, {"scientific": "Platanus x acerifolia", "common": "American Hophornbeam Ironwood", "score": 0.496572, "risk": "Moderate Risk"}, {"scientific": "Ulmus thomasii", "common": "Rock Elm", "score": 0.496271, "risk": "Moderate Risk"}, {"scientific": "Ulmus thomasii", "common": "Colorado Spruce", "score": 0.49542, "risk": "Moderate Risk"}, {"scientific": "Picea pungens 'hoopsi'", "common": "Colorado Blue Spruce", "score": 0.49542, "risk": "Moderate Risk"}, {"scientific": "Picea pungens", "common": "Colorado Green Spruce", "score": 0.495107, "risk": "Moderate Risk"}, {"scientific": "Paulownia tomentosa", "common": "Princess Tree", "score": 0.489934, "risk": "Moderate Risk"}, {"scientific": "Ash", "common": " ", "score": 0.484081, "risk": "Moderate Risk"}, {"scientific": "Asimina triloba", "common": "Pawpaw", "score": 0.484048, "risk": "Moderate Risk"}, {"scientific": "Chamaecyparis nootkatensts", "common": "Weeping False Cyprus", "score": 0.483101, "risk": "Moderate Risk"}, {"scientific": "Populus x canadensis", "common": "Carolina Poplar", "score": 0.482627, "risk": "Moderate Risk"}, {"scientific": "Chamaecyparis nootkatensis 'glauca'", "common": "Alaskan Cedar", "score": 0.482064, "risk": "Moderate Risk"}, {"scientific": "Alnus glutinosa", "common": "European Alder", "score": 0.480696, "risk": "Moderate Risk"}, {"scientific": "Acer pseudoplatanus", "common": "Sycamore Maple", "score": 0.477792, "risk": "Moderate Risk"}, {"scientific": "Quercus shumardii", "common": "Shumard Oak", "score": 0.473779, "risk": "Moderate Risk"}, {"scientific": "Betula nigra", "common": "River Birch", "score": 0.473084, "risk": "Moderate Risk"}, {"scientific": "Betula nigra 'heritage'", "common": "Heritage River Birch", "score": 0.473084, "risk": "Moderate Risk"}, {"scientific": "Betula nigra 'heritage'", "common": "Spring Snow Crabapple", "score": 0.472786, "risk": "Moderate Risk"}, {"scientific": "Taxus canadensis", "common": "Canadian Yew", "score": 0.463459, "risk": "Moderate Risk"}, {"scientific": "Acer ginnala", "common": "Amur Maple", "score": 0.456353, "risk": "Moderate Risk"}, {"scientific": "Abies alba", "common": "Silver Fir", "score": 0.454232, "risk": "Moderate Risk"}, {"scientific": "Picea glauca", "common": "White Spruce", "score": 0.454198, "risk": "Moderate Risk"}, {"scientific": "Picea omorika", "common": "Serbian Spruce", "score": 0.454198, "risk": "Moderate Risk"}, {"scientific": "Picea omorika", "common": "American Mountain Ash", "score": 0.448935, "risk": "Moderate Risk"}, {"scientific": "Sorbus americana", "common": " ", "score": 0.447481, "risk": "Moderate Risk"}, {"scientific": "Viburnum trilobum", "common": "Highbush Cranberry", "score": 0.447282, "risk": "Moderate Risk"}, {"scientific": "Catalpa bignonioides", "common": "Southern Catalpa", "score": 0.431279, "risk": "Moderate Risk"}, {"scientific": "Populus deltoides", "common": "Eastern Cottonwood", "score": 0.426415, "risk": "Moderate Risk"}, {"scientific": "Pseudotsuga menziesii", "common": "Douglas Fir", "score": 0.420748, "risk": "Moderate Risk"}, {"scientific": "Pseudotsuga menziesii", "common": "Misc Poplar", "score": 0.415657, "risk": "Moderate Risk"}, {"scientific": "Populus grandidentata", "common": "Bigtooth Aspen", "score": 0.414439, "risk": "Moderate Risk"}, {"scientific": "Populus spp.", "common": "Fruit Tree", "score": 0.413196, "risk": "Moderate Risk"}, {"scientific": "Platanus occidentalis", "common": "American Sycamore", "score": 0.410827, "risk": "Moderate Risk"}, {"scientific": "Platanus occidentalis", "common": "Sycamore", "score": 0.410827, "risk": "Moderate Risk"}, {"scientific": "Catalpa speciosa", "common": "Northern Catalpa", "score": 0.399426, "risk": "Moderate Risk"}, {"scientific": "Pinus resinosa", "common": "Red Pine", "score": 0.391729, "risk": "Moderate Risk"}, {"scientific": "Koelreuteria paniculata", "common": "Golden Raintree", "score": 0.38893, "risk": "Moderate Risk"}, {"scientific": "Ulmus pumila", "common": "Siberian Elm", "score": 0.386545, "risk": "Moderate Risk"}, {"scientific": "Ulmus x 'accolade'", "common": "Accolade Elm", "score": 0.386545, "risk": "Moderate Risk"}, {"scientific": "Ulmus x 'homestead'", "common": "Homestead Elm", "score": 0.38616, "risk": "Moderate Risk"}, {"scientific": "Quercus bicolor", "common": "Swamp White Oak", "score": 0.385788, "risk": "Moderate Risk"}, {"scientific": "Larix lariclna", "common": "Eastern Larch", "score": 0.384381, "risk": "Moderate Risk"}, {"scientific": "Carya laclniosa", "common": "Shellbark Hickory", "score": 0.383621, "risk": "Moderate Risk"}, {"scientific": "Ulmus 'urban'", "common": "Urban Elm", "score": 0.383586, "risk": "Moderate Risk"}, {"scientific": "Ulmus 'urban'", "common": "American Hophornbeam Ironwood", "score": 0.383586, "risk": "Moderate Risk"}, {"scientific": "Ulmus 'urban'", "common": "Espresso Kentucky Coffee Tree", "score": 0.383586, "risk": "Moderate Risk"}, {"scientific": "Ulmus 'urban'", "common": "Macho Amur Corktree", "score": 0.383586, "risk": "Moderate Risk"}, {"scientific": "Abies concolor", "common": "White Fir", "score": 0.381913, "risk": "Moderate Risk"}, {"scientific": "Cornus sericea", "common": "Red Osier Dogwood", "score": 0.380774, "risk": "Moderate Risk"}, {"scientific": "Celtis laevigata", "common": "Sugarberry", "score": 0.379094, "risk": "Moderate Risk"}, {"scientific": "Quercus velutina", "common": "Black Oak", "score": 0.377936, "risk": "Moderate Risk"}, {"scientific": "Syringa reticulata", "common": "Japanese Tree Lilac", "score": 0.36884, "risk": "Moderate Risk"}, {"scientific": "Syringa reticulata", "common": "Ivory Silk Tree Lilac", "score": 0.36884, "risk": "Moderate Risk"}, {"scientific": "Fraxinus americana", "common": "White Ash", "score": 0.368798, "risk": "Moderate Risk"}, {"scientific": "Fraxinus excelsior", "common": "European Ash", "score": 0.368798, "risk": "Moderate Risk"}, {"scientific": "Fraxinus quadrangulata", "common": "Blue Ash", "score": 0.368709, "risk": "Moderate Risk"}, {"scientific": "Fraxinus quadrangulata", "common": "Chinese Tree Lilac", "score": 0.368635, "risk": "Moderate Risk"}, {"scientific": "Fraxinus quadrangulata", "common": "China Snow Lilac", "score": 0.368551, "risk": "Moderate Risk"}, {"scientific": "Syringa reticulata 'ivory silk'", "common": "Ivory Silk Lilac", "score": 0.368449, "risk": "Moderate Risk"}, {"scientific": "Syringa pekinensis", "common": "American Hophornbeam Ironwood", "score": 0.368355, "risk": "Moderate Risk"}, {"scientific": "Syringa pekinensis", "common": "Forest Pansy Redbud", "score": 0.368355, "risk": "Moderate Risk"}, {"scientific": "Syringa pekinensis", "common": "Kwanzan Cherry", "score": 0.368355, "risk": "Moderate Risk"}, {"scientific": "Hamamelis virginiana", "common": "American Witch-Hazel", "score": 0.368046, "risk": "Moderate Risk"}, {"scientific": "Hamamelis virginiana", "common": "Common Witchhazel", "score": 0.367935, "risk": "Moderate Risk"}, {"scientific": "Maclura pomifera", "common": "Osage Orange", "score": 0.356675, "risk": "Moderate Risk"}, {"scientific": "Acer saccharum", "common": "Sugar Maple", "score": 0.349568, "risk": "Moderate Risk"}, {"scientific": "Acer saccharinum", "common": "Silver Maple", "score": 0.349521, "risk": "Moderate Risk"}, {"scientific": "Pinus rigtda", "common": "Pitch Pine", "score": 0.348396, "risk": "Moderate Risk"}, {"scientific": "Acer nigrum", "common": "Black Maple", "score": 0.346684, "risk": "Moderate Risk"}, {"scientific": "Betula alleghaniensis", "common": "Yellow Birch", "score": 0.330944, "risk": "Low Risk"}, {"scientific": "Malus spp.", "common": "Flowering Crab Apple", "score": 0.32591, "risk": "Low Risk"}, {"scientific": "Malus 'hargozam'", "common": "Harvest Gold Crabapple", "score": 0.324856, "risk": "Low Risk"}, {"scientific": "Malus 'hargozam'", "common": "Spring Snow Crabapple", "score": 0.324105, "risk": "Low Risk"}, {"scientific": "Malus 'sutyzam'", "common": "Sugar Tyme Crabapple", "score": 0.323787, "risk": "Low Risk"}, {"scientific": "Malus 'indian magic'", "common": "Indian Magic Crabapple", "score": 0.323772, "risk": "Low Risk"}, {"scientific": "Malus 'pink spires'", "common": "Pink Spires Crabapple", "score": 0.323772, "risk": "Low Risk"}, {"scientific": "Malus 'prairiefire'", "common": "Prairie Fire Crabapple", "score": 0.323772, "risk": "Low Risk"}, {"scientific": "Malus 'profusion'", "common": "Profusion Crabapple", "score": 0.323772, "risk": "Low Risk"}, {"scientific": "Syringa vulgaris", "common": "Common Lilac", "score": 0.319984, "risk": "Low Risk"}, {"scientific": "Quercus montana", "common": "Chestnut Oak", "score": 0.318374, "risk": "Low Risk"}, {"scientific": "Juglans nigra", "common": "Black Walnut", "score": 0.31151, "risk": "Low Risk"}, {"scientific": "Juglans clnerea", "common": "Butternut", "score": 0.311178, "risk": "Low Risk"}, {"scientific": "Juglans spp.", "common": "Misc Walnut", "score": 0.309813, "risk": "Low Risk"}, {"scientific": "Quercus cocclnea", "common": "Scarlet Oak", "score": 0.30383, "risk": "Low Risk"}, {"scientific": "Gymnocladus dioicus", "common": "Kentucky Coffeetree", "score": 0.302272, "risk": "Low Risk"}, {"scientific": "Gymnocladus dioicus 'espresso'", "common": "Espresso Kentucky Coffee Tree", "score": 0.302272, "risk": "Low Risk"}, {"scientific": "Maackia amurensis", "common": "Amur Maackia", "score": 0.302272, "risk": "Low Risk"}, {"scientific": "Styphnolobium japonicum", "common": "Japanese Pagoda Tree", "score": 0.302245, "risk": "Low Risk"}, {"scientific": "Laburnum x watereri", "common": "Goldenchain Tree", "score": 0.302176, "risk": "Low Risk"}, {"scientific": "Prunus x cistena", "common": "Purpleleaf Sand Cherry", "score": 0.295195, "risk": "Low Risk"}, {"scientific": "Populus alba", "common": "White Poplar", "score": 0.293016, "risk": "Low Risk"}, {"scientific": "Ulmus rubra", "common": "Slippery Elm", "score": 0.292455, "risk": "Low Risk"}, {"scientific": "Morus rubra", "common": "Red Mulberry", "score": 0.287646, "risk": "Low Risk"}, {"scientific": "Malus 'spring snow'", "common": "Athena Lacebark Elm", "score": 0.280785, "risk": "Low Risk"}, {"scientific": "Carya glabra", "common": "Pignut Hickory", "score": 0.278258, "risk": "Low Risk"}, {"scientific": "Salix alba", "common": "White Willow", "score": 0.277788, "risk": "Low Risk"}, {"scientific": "Salix discolor", "common": "Pussy Willow", "score": 0.268077, "risk": "Low Risk"}, {"scientific": "Ulmus parvifolia 'Chinese'", "common": "Chinese Elm", "score": 0.267344, "risk": "Low Risk"}, {"scientific": "Ulmus americana", "common": "American Elm", "score": 0.267336, "risk": "Low Risk"}, {"scientific": "Ulmus glabra", "common": "Scotch / Wych Elm", "score": 0.267336, "risk": "Low Risk"}, {"scientific": "Ulmus parvifolia 'Bosque'", "common": "Bosque Elm", "score": 0.267246, "risk": "Low Risk"}, {"scientific": "Ulmus procera", "common": "English Elm", "score": 0.266387, "risk": "Low Risk"}, {"scientific": "Ulmus 'frontier'", "common": "Frontier Elm", "score": 0.265774, "risk": "Low Risk"}, {"scientific": "Ulmus 'frontier'", "common": "Kwanzan Cherry", "score": 0.265774, "risk": "Low Risk"}, {"scientific": "Ulmus 'frontier'", "common": "Spring Snow Crabapple", "score": 0.265774, "risk": "Low Risk"}, {"scientific": "Ulmus americana 'valley forge'", "common": "Valley Forge Elm", "score": 0.264851, "risk": "Low Risk"}, {"scientific": "Ulmus americana 'princeton'", "common": "Princeton Elm", "score": 0.264508, "risk": "Low Risk"}, {"scientific": "Gymnocladusd dioicus", "common": "Kentucky Coffeetree", "score": 0.262874, "risk": "Low Risk"}, {"scientific": "Morus alba", "common": "White Mulberry", "score": 0.262626, "risk": "Low Risk"}, {"scientific": "Morus alba 'pendula'", "common": "Weeping Mulberry", "score": 0.262538, "risk": "Low Risk"}, {"scientific": "Gleditsia triacanthos var. inermis", "common": "Honey Locust", "score": 0.26208, "risk": "Low Risk"}, {"scientific": "Acer spp.", "common": "Maple Acer Spp.", "score": 0.259464, "risk": "Low Risk"}, {"scientific": "Acer spp.", "common": "Red Maple", "score": 0.259427, "risk": "Low Risk"}, {"scientific": "Tilia cordata", "common": "Littleleaf Linden", "score": 0.25798, "risk": "Low Risk"}, {"scientific": "Acer rubrum", "common": "Espresso Kentucky Coffee Tree", "score": 0.25719, "risk": "Low Risk"}, {"scientific": "Fraxlnus nigra", "common": "Black Ash", "score": 0.256864, "risk": "Low Risk"}, {"scientific": "Tilia x flavescens 'glenleven'", "common": "Glenleven Linden", "score": 0.251868, "risk": "Low Risk"}, {"scientific": "Tilia cordata 'Greenspire'", "common": "Greenspire Linden", "score": 0.251716, "risk": "Low Risk"}, {"scientific": "Tilia mongolica", "common": "Mongolian Linden", "score": 0.25137, "risk": "Low Risk"}, {"scientific": "Tilia x euchlora", "common": "Crimean Linden", "score": 0.251341, "risk": "Low Risk"}, {"scientific": "Rhamnus cathartica", "common": "Common Buckthorn", "score": 0.246245, "risk": "Low Risk"}, {"scientific": "Thuja spp.", "common": "Misc Cedar", "score": 0.246245, "risk": "Low Risk"}, {"scientific": "Picea spp.", "common": "Spruce Spp.", "score": 0.24624, "risk": "Low Risk"}, {"scientific": "Acer campestre", "common": "Hedge Maple", "score": 0.246208, "risk": "Low Risk"}, {"scientific": "Acer palmatum", "common": "Japanese Maple", "score": 0.246208, "risk": "Low Risk"}, {"scientific": "Acer tataricum", "common": "Tartarian Maple", "score": 0.246208, "risk": "Low Risk"}, {"scientific": "Acer x freemanii 'Armstrong'", "common": "Armstrong Maple", "score": 0.246208, "risk": "Low Risk"}, {"scientific": "Acer x freemanii 'Armstrong'", "common": "Autumn Blaze Maple", "score": 0.246208, "risk": "Low Risk"}, {"scientific": "Morus spp.", "common": "Mulberry", "score": 0.246208, "risk": "Low Risk"}, {"scientific": "Aesculus hippocastanum", "common": "Horse Chestnut", "score": 0.246192, "risk": "Low Risk"}, {"scientific": "Aesculus hippocastanum", "common": "Basswood", "score": 0.246166, "risk": "Low Risk"}, {"scientific": "Tilia platyphyllos", "common": "Bigleaf Linden", "score": 0.246166, "risk": "Low Risk"}, {"scientific": "Acer griseum", "common": "Paperbark Maple", "score": 0.246114, "risk": "Low Risk"}, {"scientific": "Tilia americana", "common": "American Basswood", "score": 0.246084, "risk": "Low Risk"}, {"scientific": "Phellodendron amurense", "common": "Amur Cork", "score": 0.246013, "risk": "Low Risk"}, {"scientific": "Acer triflorum", "common": "Three-Flower Maple", "score": 0.245386, "risk": "Low Risk"}, {"scientific": "Acer triflorum", "common": "Largeleaf Linden", "score": 0.245251, "risk": "Low Risk"}, {"scientific": "Acer triflorum", "common": "Persian Ironwood", "score": 0.245244, "risk": "Low Risk"}, {"scientific": "Tilia americana 'Sentry'", "common": "Sentry Linden", "score": 0.245195, "risk": "Low Risk"}, {"scientific": "Tilia tomentosa", "common": "Silver Linden", "score": 0.245141, "risk": "Low Risk"}, {"scientific": "Tilia tomentosa", "common": "Sterling Silver Linden", "score": 0.245088, "risk": "Low Risk"}, {"scientific": "Acer spicatum", "common": "Mountain Maple", "score": 0.245058, "risk": "Low Risk"}, {"scientific": "Aesculus hippocastanum 'Baumannii'", "common": "Baumann Horsechestnut", "score": 0.245013, "risk": "Low Risk"}, {"scientific": "Phellodendron amurense 'macho'", "common": "Macho Amur Corktree", "score": 0.244998, "risk": "Low Risk"}, {"scientific": "Aesculus carnea", "common": "Ruby Red Horsechestnut", "score": 0.244772, "risk": "Low Risk"}, {"scientific": "Aesculus carnea", "common": "Linden Spp.", "score": 0.244772, "risk": "Low Risk"}, {"scientific": "Halesia tetraptera", "common": "Carolina Silverbell", "score": 0.244665, "risk": "Low Risk"}, {"scientific": "Halesia tetraptera", "common": "Fort Mcnair Red Horsechestnut", "score": 0.244619, "risk": "Low Risk"}, {"scientific": "Acer freemanii 'armstrong'", "common": "Athena Lacebark Elm", "score": 0.244594, "risk": "Low Risk"}, {"scientific": "Acer x freemanii", "common": "Freeman Maple", "score": 0.244594, "risk": "Low Risk"}, {"scientific": "Acer x freemanii 'Autumn Blaze'", "common": "American Hophornbeam Ironwood", "score": 0.244594, "risk": "Low Risk"}, {"scientific": "Aesculus carnea 'fort mcnair'", "common": "Athena Lacebark Elm", "score": 0.24457, "risk": "Low Risk"}, {"scientific": "Aesculus carnea 'fort mcnair'", "common": "Frans Fontaine Hornbeam", "score": 0.24457, "risk": "Low Risk"}, {"scientific": "Aesculus carnea 'fort mcnair'", "common": "Purple Robe Locust", "score": 0.24457, "risk": "Low Risk"}, {"scientific": "Tilia americana 'american sentry'", "common": "American Sentry Basswood", "score": 0.244563, "risk": "Low Risk"}, {"scientific": "Tilia americana 'american sentry'", "common": "Espresso Kentucky Coffee Tree", "score": 0.244563, "risk": "Low Risk"}, {"scientific": "Tilia tomentosa 'sterling silver'", "common": "Chanticleer Ornamental Pear", "score": 0.244563, "risk": "Low Risk"}, {"scientific": "Tilia tomentosa 'sterling silver'", "common": "Frans Fontaine Hornbeam", "score": 0.244563, "risk": "Low Risk"}, {"scientific": "Inside the blvd.", "common": "Blue Beech", "score": 0.244541, "risk": "Low Risk"}, {"scientific": "Parrotia persica", "common": "American Hophornbeam Ironwood", "score": 0.244541, "risk": "Low Risk"}, {"scientific": "Parrotia persica", "common": "Spring Snow Crabapple", "score": 0.244541, "risk": "Low Risk"}, {"scientific": "Styrax japonicus", "common": "Japanese Snowbell", "score": 0.244474, "risk": "Low Risk"}, {"scientific": "Carya cordiformis", "common": "Bitternut Hickory", "score": 0.238461, "risk": "Low Risk"}, {"scientific": "Amelanchier spp.", "common": "Serviceberry", "score": 0.238457, "risk": "Low Risk"}, {"scientific": "Amelanchier laevis", "common": "Smooth Serviceberry", "score": 0.237858, "risk": "Low Risk"}, {"scientific": "Amelanchier laevis", "common": "Sycamore", "score": 0.235213, "risk": "Low Risk"}, {"scientific": "Betula papyrifera", "common": "White Birch", "score": 0.232017, "risk": "Low Risk"}, {"scientific": "Celtis occidentalis", "common": "Common Hackberry", "score": 0.218453, "risk": "Low Risk"}, {"scientific": "Celtis occidentalis", "common": "Native Hackberry", "score": 0.218453, "risk": "Low Risk"}, {"scientific": "Celtis occidentalis", "common": "Prairie Sentinel Hackberry", "score": 0.21812, "risk": "Low Risk"}, {"scientific": "Celtis occidentalis 'Prairie Sentinel'", "common": "Blue Beech", "score": 0.217996, "risk": "Low Risk"}, {"scientific": "Fagus grandifolia", "common": "American Beech", "score": 0.211365, "risk": "Low Risk"}, {"scientific": "Fagus sylvatica", "common": "European Beech", "score": 0.211365, "risk": "Low Risk"}, {"scientific": "Fagus sylvatica 'purpurea'", "common": "Purple Beech", "score": 0.211365, "risk": "Low Risk"}, {"scientific": "Fagus sylvatica 'dawyck purple'", "common": "Dawyck Purple European Beech", "score": 0.211205, "risk": "Low Risk"}, {"scientific": "Fagus sylvatica 'dawyck purple'", "common": "Tricolor Beech", "score": 0.211205, "risk": "Low Risk"}, {"scientific": "Fagus sylvatica 'pendula'", "common": "Weeping Beech", "score": 0.211128, "risk": "Low Risk"}, {"scientific": "Fagus sylvatica 'riversii'", "common": "Rivers Beech", "score": 0.210433, "risk": "Low Risk"}, {"scientific": "Fagus sylvatica 'purpurea tricolor'", "common": " ", "score": 0.210037, "risk": "Low Risk"}, {"scientific": "Copper beech", "common": "Dawyck Purple European Beech", "score": 0.209997, "risk": "Low Risk"}, {"scientific": "Elaeagnus angustifolia", "common": "Russian Olive", "score": 0.208241, "risk": "Low Risk"}, {"scientific": "Acer pensylvanicum", "common": "Striped Maple", "score": 0.205555, "risk": "Low Risk"}, {"scientific": "Quercus robur", "common": "English Oak", "score": 0.202433, "risk": "Low Risk"}, {"scientific": "Quercus robur", "common": "English Oak Fastigiata", "score": 0.202433, "risk": "Low Risk"}, {"scientific": "Quercus robur", "common": "Pyramidal English Oak", "score": 0.202269, "risk": "Low Risk"}, {"scientific": "Quercus muehlenbergii", "common": "Chinkapin Oak", "score": 0.202112, "risk": "Low Risk"}, {"scientific": "Quercus spp.", "common": "Oak Spp.", "score": 0.201892, "risk": "Low Risk"}, {"scientific": "Quercus ellipsoidalis", "common": "Hill's Oak", "score": 0.200853, "risk": "Low Risk"}, {"scientific": "Quercus robur 'fastigiata'", "common": "Blue Beech", "score": 0.200853, "risk": "Low Risk"}, {"scientific": "Cotinus coggygria", "common": "Smoke Tree", "score": 0.197331, "risk": "Low Risk"}, {"scientific": "Rhus typhina", "common": "Staghorn Sumac", "score": 0.197053, "risk": "Low Risk"}, {"scientific": "Acer negundo", "common": "Manitoba Maple", "score": 0.19616, "risk": "Low Risk"}, {"scientific": "Acer negundo", "common": "Eastern Redbud", "score": 0.183096, "risk": "Low Risk"}, {"scientific": "Acer negundo", "common": "Red Bud", "score": 0.183096, "risk": "Low Risk"}, {"scientific": "Quercus rubra", "common": "Red Oak", "score": 0.183074, "risk": "Low Risk"}, {"scientific": "Cercis canadensis 'forest pansy'", "common": "Forest Pansy Redbud", "score": 0.182896, "risk": "Low Risk"}, {"scientific": "Cercis canadensis 'alba'", "common": "White Redbud", "score": 0.182684, "risk": "Low Risk"}, {"scientific": "Cercis canadensis", "common": "Bloodgood London Planetree", "score": 0.182393, "risk": "Low Risk"}, {"scientific": "Cercis canadensis", "common": "Sycamore", "score": 0.175484, "risk": "Low Risk"}, {"scientific": "Prunus serotina", "common": "Black Cherry", "score": 0.166395, "risk": "Low Risk"}, {"scientific": "Carya ovata", "common": "Shagbark Hickory", "score": 0.156622, "risk": "Low Risk"}, {"scientific": "Acer macrophyllum", "common": "Bigleaf Maple", "score": 0.153172, "risk": "Low Risk"}, {"scientific": "Caragana arborescens", "common": "Pea Shrub", "score": 0.152297, "risk": "Low Risk"}, {"scientific": "Fraxinus pennsylvanica", "common": "Green Ash", "score": 0.144635, "risk": "Low Risk"}, {"scientific": "Prunus pensylvanica", "common": "Pin Cherry", "score": 0.140801, "risk": "Low Risk"}, {"scientific": "Carpinus betulus", "common": "European Hornbeam", "score": 0.131205, "risk": "Low Risk"}, {"scientific": "Corylus colurna", "common": "Turkish Hazel", "score": 0.131205, "risk": "Low Risk"}, {"scientific": "Corylus colurna", "common": "Ironwood", "score": 0.131205, "risk": "Low Risk"}, {"scientific": "Ostrya virginiana", "common": "American Hophornbeam", "score": 0.131108, "risk": "Low Risk"}, {"scientific": "Carpinus betulas 'frans fontaine'", "common": "Frans Fontaine Hornbeam", "score": 0.130824, "risk": "Low Risk"}, {"scientific": "Carpinus betulas 'frans fontaine'", "common": "Sterling Silver Linden", "score": 0.130605, "risk": "Low Risk"}, {"scientific": "Carpinus betulas 'frans fontaine'", "common": "American Hophornbeam Ironwood", "score": 0.130605, "risk": "Low Risk"}, {"scientific": "Quercus alba", "common": "White Oak", "score": 0.112612, "risk": "Low Risk"}, {"scientific": "Prunus serrulata 'kwanzan'", "common": "Kwanzan Cherry", "score": 0.112317, "risk": "Low Risk"}, {"scientific": "Prunus spp.", "common": "Cherry", "score": 0.112317, "risk": "Low Risk"}, {"scientific": "Prunus serrulata 'amanogawa'", "common": "Amanogawa Japanese Flowering Cherry", "score": 0.111895, "risk": "Low Risk"}, {"scientific": "Prunus serrulata 'shirofugen'", "common": "Shirofugen Oriental Cherry", "score": 0.111202, "risk": "Low Risk"}, {"scientific": "Prunus serrulata 'shirofugen'", "common": "Sterling Silver Linden", "score": 0.11116, "risk": "Low Risk"}, {"scientific": "Malus baccata 'columnaris'", "common": "Columnar Siberian Crabapple", "score": 0.103039, "risk": "Low Risk"}, {"scientific": "Malus pumila", "common": "Common Apple", "score": 0.103039, "risk": "Low Risk"}, {"scientific": "Prunus virginiana 'schubert", "common": "Schubert Choke Cherry", "score": 0.103013, "risk": "Low Risk"}, {"scientific": "Prunus vlrginiana", "common": "Common Chokecherry", "score": 0.103013, "risk": "Low Risk"}, {"scientific": "Malus 'branzam'", "common": "Brandywine Crabapple", "score": 0.102973, "risk": "Low Risk"}, {"scientific": "Malus coronaria", "common": "Sweet Crabapple", "score": 0.102907, "risk": "Low Risk"}, {"scientific": "Prunus serrulata", "common": "Flowering Cherry", "score": 0.102863, "risk": "Low Risk"}, {"scientific": "Prunus subhirtella 'pendula'", "common": "Weeping Higan Cherry", "score": 0.102791, "risk": "Low Risk"}, {"scientific": "Prunus maackii", "common": "Amur Chokecherry", "score": 0.102518, "risk": "Low Risk"}, {"scientific": "Prunus cerasifera", "common": "Cherry Plum", "score": 0.102273, "risk": "Low Risk"}, {"scientific": "Prunus triloba var. multiplex", "common": "Flowering Almond", "score": 0.101707, "risk": "Low Risk"}, {"scientific": "Prunus x yedoensis", "common": "Yoshino Cherry", "score": 0.101447, "risk": "Low Risk"}, {"scientific": "Prunus sargentii", "common": "Sargent Cherry", "score": 0.101442, "risk": "Low Risk"}, {"scientific": "Prunus x subhirtella", "common": "Higan Cherry", "score": 0.101427, "risk": "Low Risk"}, {"scientific": "Prunus sargentii columnaris", "common": "Columnar Sargent Cherry", "score": 0.100673, "risk": "Low Risk"}, {"scientific": "Populus tremuloides", "common": "Trembling Aspen", "score": 0.099513, "risk": "Low Risk"}, {"scientific": "Quercus macrocarpa", "common": "Bur Oak", "score": 0.052907, "risk": "Low Risk"}, {"scientific": "Ailanthus altissima", "common": "Tree of Heaven", "score": 0.040554, "risk": "Low Risk"}, {"scientific": "Populus balsamifera", "common": "Balsam Poplar", "score": 0.013168, "risk": "Low Risk"}, {"scientific": "Robinia pseudoacacla", "common": "Black Locust", "score": 0.003726, "risk": "Low Risk"}, {"scientific": "Juniperus spp.", "common": "Juniper", "score": 0.00154, "risk": "Low Risk"}, {"scientific": "Juniperus virginiana", "common": "Eastern Red Cedar", "score": 0.00154, "risk": "Low Risk"}];
+// ── RANKING DATA (updated: High 74 / Moderate 152 / Low 93) ──────────────
+const RD=[{"s":"Tilia spp.","c":"Linden Tilia Spp.","v":1.0,"r":"High Risk"},{"s":"Salix spp.","c":"Misc Willow","v":0.85928,"r":"High Risk"},{"s":"Prunus nigra","c":"Canadian Plum","v":0.857687,"r":"High Risk"},{"s":"Ginkgo biloba","c":"Ginkgo","v":0.818915,"r":"High Risk"},{"s":"Ginkgo biloba 'Princeton Sentry'","c":"Princeton Sentry Ginkgo","v":0.818692,"r":"High Risk"},{"s":"Magnolia x soulangiana","c":"Saucer Magnolia","v":0.768004,"r":"High Risk"},{"s":"Magnolia x soulangeana 'alexandrina'","c":"Alexandrina Saucer Magnolia","v":0.766241,"r":"High Risk"},{"s":"Tsuga caroliniana","c":"Carolina Hemlock","v":0.758357,"r":"High Risk"},{"s":"Salix matsudana 'tortuosa'","c":"Corkscrew Willow","v":0.731864,"r":"High Risk"},{"s":"Salix nigra","c":"Black Willow","v":0.731536,"r":"High Risk"},{"s":"Pinus sylvestris","c":"Scotch Pine","v":0.721026,"r":"High Risk"},{"s":"Salix fragilis","c":"Crack Willow","v":0.717089,"r":"High Risk"},{"s":"Betula pendula","c":"European Birch","v":0.707316,"r":"High Risk"},{"s":"Magnolia x soulangeana 'black tulip'","c":"Black Tulip Magnolia","v":0.685706,"r":"High Risk"},{"s":"Philadelphus coronarius","c":"Mock Orange","v":0.68264,"r":"High Risk"},{"s":"Magnolia stellata","c":"Star Magnolia","v":0.670946,"r":"High Risk"},{"s":"Magnolia 'susan'","c":"Susan Magnolia","v":0.668423,"r":"High Risk"},{"s":"Pinus nigra","c":"Austrian Pine","v":0.654222,"r":"High Risk"},{"s":"Abies balsamea","c":"Balsam Fir","v":0.650214,"r":"High Risk"},{"s":"Pyrus calleryana 'bradford'","c":"Bradford Pear","v":0.643802,"r":"High Risk"},{"s":"Pyrus calleryana 'chanticleer'","c":"Chanticleer Ornamental Pear","v":0.643802,"r":"High Risk"},{"s":"Taxodium distichum","c":"Common Bald Cyprus","v":0.633977,"r":"High Risk"},{"s":"Magnolia x loebneri","c":"Loebner Magnolia","v":0.625186,"r":"High Risk"},{"s":"Magnolia x loebneri","c":"White Pine","v":0.622882,"r":"High Risk"},{"s":"Pinus strobus","c":"Eastern White Pine","v":0.622662,"r":"High Risk"},{"s":"Pinus spp.","c":"Misc Pine","v":0.622141,"r":"High Risk"},{"s":"Castanea dentata","c":"American Chestnut","v":0.615337,"r":"High Risk"},{"s":"Castanea dentata","c":"Hoptree","v":0.608319,"r":"High Risk"},{"s":"Ptelea trifoliata","c":"Common Hoptree","v":0.607668,"r":"High Risk"},{"s":"Fraxinus spp.","c":"Ash Spp.","v":0.601388,"r":"High Risk"},{"s":"Pyrus calleryana","c":"Callery Pear","v":0.600473,"r":"High Risk"},{"s":"Pinus mugo","c":"Mugo Pine","v":0.598578,"r":"High Risk"},{"s":"Abies fraseri","c":"Fraser Fir","v":0.589738,"r":"High Risk"},{"s":"Magnolia stellata 'royal star'","c":"Royal Star Magnolia","v":0.589569,"r":"High Risk"},{"s":"Magnolia x loebneri 'leonard messel'","c":"Leonard Messel Loebner Magnolia","v":0.589569,"r":"High Risk"},{"s":"Magnolia x loebneri 'merrill'","c":"Merrill Magnolia","v":0.589511,"r":"High Risk"},{"s":"Taxus baccata","c":"Common Yew","v":0.589116,"r":"High Risk"},{"s":"Larix kaempferi","c":"Japanese Larch","v":0.58874,"r":"High Risk"},{"s":"Salix babylonica","c":"Weeping Willow","v":0.585803,"r":"High Risk"},{"s":"Taxus cuspidata","c":"Japanese Yew","v":0.58568,"r":"High Risk"},{"s":"Picea abies","c":"Norway Spruce","v":0.580349,"r":"High Risk"},{"s":"Pinus banksiana","c":"Jack Pine","v":0.566496,"r":"High Risk"},{"s":"Crataegus spp.","c":"Hawthorn","v":0.559914,"r":"High Risk"},{"s":"Zelkova serrata","c":"Japanese Zelkova","v":0.556529,"r":"High Risk"},{"s":"Zelkova serrata 'green vase","c":"Green Vase Zelkova","v":0.556259,"r":"High Risk"},{"s":"Tsuga canadensis","c":"Eastern Hemlock","v":0.55271,"r":"High Risk"},{"s":"Pinus parviflora","c":"Five-Needle Pine","v":0.542755,"r":"High Risk"},{"s":"Pinus bungeana","c":"Lacebark Pine","v":0.542484,"r":"High Risk"},{"s":"Betula lenta","c":"Cherry Birch","v":0.534506,"r":"High Risk"},{"s":"Betula lenta","c":"Pin Oak","v":0.529181,"r":"High Risk"},{"s":"Juglans regia","c":"English Walnut","v":0.529112,"r":"High Risk"},{"s":"Quercus palustris","c":"Freeman Maple","v":0.527233,"r":"High Risk"},{"s":"Larix decidua","c":"European Larch","v":0.52676,"r":"High Risk"},{"s":"Thuja occidentalis","c":"White Cedar","v":0.52142,"r":"High Risk"},{"s":"Thuja occldentalis","c":"Eastern White Cedar","v":0.52142,"r":"High Risk"},{"s":"Chamaecyparis spp.","c":"False Cyprus","v":0.520978,"r":"High Risk"},{"s":"Lmus x 'pioneer'","c":"Pioneer Elm","v":0.52054,"r":"High Risk"},{"s":"Sorbus aucuparia","c":"European Mountain Ash","v":0.519741,"r":"High Risk"},{"s":"Sorbus thuringiaca","c":"Oakleaf Mountain Ash","v":0.519741,"r":"High Risk"},{"s":"Pinus flexilis","c":"Limber Pine","v":0.512861,"r":"High Risk"},{"s":"Carpinus caroliniana","c":"American Hornbeam / Blue Beech","v":0.511768,"r":"High Risk"},{"s":"Carpinus caroliniana","c":"Blue Beech","v":0.511768,"r":"High Risk"},{"s":"Carpinus japonica","c":"Japanese Hornbeam","v":0.511738,"r":"High Risk"},{"s":"Acer platanoides","c":"Norway Maple","v":0.507506,"r":"High Risk"},{"s":"Acer platanoides","c":"Tuliptree","v":0.507056,"r":"High Risk"},{"s":"Liriodendron tulipifera 'Fastigiatum'","c":"Columnar Tuliptree","v":0.506888,"r":"High Risk"},{"s":"Liriodendron tulipifera","c":"Athena Lacebark Elm","v":0.506765,"r":"High Risk"},{"s":"Liriodendron tulipifera","c":"Freeman Maple","v":0.506765,"r":"High Risk"},{"s":"Liriodendron tulipifera","c":"Ironwood","v":0.506765,"r":"High Risk"},{"s":"Liriodendron tulipifera 'aureomarginatum'","c":"Variegated Tuliptree","v":0.506765,"r":"High Risk"},{"s":"Acer platanoides 'globosum'","c":"Globe Maple","v":0.506699,"r":"High Risk"},{"s":"Acer platanoides 'drummondii'","c":"Harlequin Maple","v":0.505947,"r":"High Risk"},{"s":"Acer miyabei","c":"Miyabe Maple","v":0.505913,"r":"High Risk"},{"s":"Acer miyabei","c":"State Street Maple","v":0.505466,"r":"High Risk"},{"s":"Acer truncatum","c":"Purpleblow Maple","v":0.502464,"r":"Moderate Risk"},{"s":"Ulmus spp.","c":"Elm Spp.","v":0.499924,"r":"Moderate Risk"},{"s":"Ulmus spp.","c":"London Plane","v":0.498044,"r":"Moderate Risk"},{"s":"Populus nigra 'italica'","c":"Lombardy Black Poplar","v":0.497871,"r":"Moderate Risk"},{"s":"Platanus x acerifolia 'bloodgood'","c":"Bloodgood London Planetree","v":0.497693,"r":"Moderate Risk"},{"s":"Platanus x acerifolia","c":"","v":0.496572,"r":"Moderate Risk"},{"s":"Platanus x acerifolia","c":"American Hophornbeam Ironwood","v":0.496572,"r":"Moderate Risk"},{"s":"Ulmus thomasii","c":"Rock Elm","v":0.496271,"r":"Moderate Risk"},{"s":"Ulmus thomasii","c":"Colorado Spruce","v":0.49542,"r":"Moderate Risk"},{"s":"Picea pungens 'hoopsi'","c":"Colorado Blue Spruce","v":0.49542,"r":"Moderate Risk"},{"s":"Picea pungens","c":"Colorado Green Spruce","v":0.495107,"r":"Moderate Risk"},{"s":"Paulownia tomentosa","c":"Princess Tree","v":0.489934,"r":"Moderate Risk"},{"s":"Ash","c":"","v":0.484081,"r":"Moderate Risk"},{"s":"Asimina triloba","c":"Pawpaw","v":0.484048,"r":"Moderate Risk"},{"s":"Chamaecyparis nootkatensts","c":"Weeping False Cyprus","v":0.483101,"r":"Moderate Risk"},{"s":"Populus x canadensis","c":"Carolina Poplar","v":0.482627,"r":"Moderate Risk"},{"s":"Chamaecyparis nootkatensis 'glauca'","c":"Alaskan Cedar","v":0.482064,"r":"Moderate Risk"},{"s":"Alnus glutinosa","c":"European Alder","v":0.480696,"r":"Moderate Risk"},{"s":"Acer pseudoplatanus","c":"Sycamore Maple","v":0.477792,"r":"Moderate Risk"},{"s":"Quercus shumardii","c":"Shumard Oak","v":0.473779,"r":"Moderate Risk"},{"s":"Betula nigra","c":"River Birch","v":0.473084,"r":"Moderate Risk"},{"s":"Betula nigra 'heritage'","c":"Heritage River Birch","v":0.473084,"r":"Moderate Risk"},{"s":"Betula nigra 'heritage'","c":"Spring Snow Crabapple","v":0.472786,"r":"Moderate Risk"},{"s":"Taxus canadensis","c":"Canadian Yew","v":0.463459,"r":"Moderate Risk"},{"s":"Acer ginnala","c":"Amur Maple","v":0.456353,"r":"Moderate Risk"},{"s":"Abies alba","c":"Silver Fir","v":0.454232,"r":"Moderate Risk"},{"s":"Picea glauca","c":"White Spruce","v":0.454198,"r":"Moderate Risk"},{"s":"Picea omorika","c":"Serbian Spruce","v":0.454198,"r":"Moderate Risk"},{"s":"Picea omorika","c":"American Mountain Ash","v":0.448935,"r":"Moderate Risk"},{"s":"Sorbus americana","c":"","v":0.447481,"r":"Moderate Risk"},{"s":"Viburnum trilobum","c":"Highbush Cranberry","v":0.447282,"r":"Moderate Risk"},{"s":"Catalpa bignonioides","c":"Southern Catalpa","v":0.431279,"r":"Moderate Risk"},{"s":"Populus deltoides","c":"Eastern Cottonwood","v":0.426415,"r":"Moderate Risk"},{"s":"Pseudotsuga menziesii","c":"Douglas Fir","v":0.420748,"r":"Moderate Risk"},{"s":"Pseudotsuga menziesii","c":"Misc Poplar","v":0.415657,"r":"Moderate Risk"},{"s":"Populus grandidentata","c":"Bigtooth Aspen","v":0.414439,"r":"Moderate Risk"},{"s":"Populus spp.","c":"Fruit Tree","v":0.413196,"r":"Moderate Risk"},{"s":"Platanus occidentalis","c":"American Sycamore","v":0.410827,"r":"Moderate Risk"},{"s":"Platanus occidentalis","c":"Sycamore","v":0.410827,"r":"Moderate Risk"},{"s":"Catalpa speciosa","c":"Northern Catalpa","v":0.399426,"r":"Moderate Risk"},{"s":"Pinus resinosa","c":"Red Pine","v":0.391729,"r":"Moderate Risk"},{"s":"Koelreuteria paniculata","c":"Golden Raintree","v":0.38893,"r":"Moderate Risk"},{"s":"Ulmus pumila","c":"Siberian Elm","v":0.386545,"r":"Moderate Risk"},{"s":"Ulmus x 'accolade'","c":"Accolade Elm","v":0.386545,"r":"Moderate Risk"},{"s":"Ulmus x 'homestead'","c":"Homestead Elm","v":0.38616,"r":"Moderate Risk"},{"s":"Quercus bicolor","c":"Swamp White Oak","v":0.385788,"r":"Moderate Risk"},{"s":"Larix lariclna","c":"Eastern Larch","v":0.384381,"r":"Moderate Risk"},{"s":"Carya laclniosa","c":"Shellbark Hickory","v":0.383621,"r":"Moderate Risk"},{"s":"Ulmus 'urban'","c":"Urban Elm","v":0.383586,"r":"Moderate Risk"},{"s":"Ulmus 'urban'","c":"American Hophornbeam Ironwood","v":0.383586,"r":"Moderate Risk"},{"s":"Ulmus 'urban'","c":"Espresso Kentucky Coffee Tree","v":0.383586,"r":"Moderate Risk"},{"s":"Ulmus 'urban'","c":"Macho Amur Corktree","v":0.383586,"r":"Moderate Risk"},{"s":"Abies concolor","c":"White Fir","v":0.381913,"r":"Moderate Risk"},{"s":"Cornus sericea","c":"Red Osier Dogwood","v":0.380774,"r":"Moderate Risk"},{"s":"Celtis laevigata","c":"Sugarberry","v":0.379094,"r":"Moderate Risk"},{"s":"Quercus velutina","c":"Black Oak","v":0.377936,"r":"Moderate Risk"},{"s":"Syringa reticulata","c":"Japanese Tree Lilac","v":0.36884,"r":"Moderate Risk"},{"s":"Syringa reticulata","c":"Ivory Silk Tree Lilac","v":0.36884,"r":"Moderate Risk"},{"s":"Fraxinus americana","c":"White Ash","v":0.368798,"r":"Moderate Risk"},{"s":"Fraxinus excelsior","c":"European Ash","v":0.368798,"r":"Moderate Risk"},{"s":"Fraxinus quadrangulata","c":"Blue Ash","v":0.368709,"r":"Moderate Risk"},{"s":"Fraxinus quadrangulata","c":"Chinese Tree Lilac","v":0.368635,"r":"Moderate Risk"},{"s":"Fraxinus quadrangulata","c":"China Snow Lilac","v":0.368551,"r":"Moderate Risk"},{"s":"Syringa reticulata 'ivory silk'","c":"Ivory Silk Lilac","v":0.368449,"r":"Moderate Risk"},{"s":"Syringa pekinensis","c":"American Hophornbeam Ironwood","v":0.368355,"r":"Moderate Risk"},{"s":"Syringa pekinensis","c":"Forest Pansy Redbud","v":0.368355,"r":"Moderate Risk"},{"s":"Syringa pekinensis","c":"Kwanzan Cherry","v":0.368355,"r":"Moderate Risk"},{"s":"Hamamelis virginiana","c":"American Witch-Hazel","v":0.368046,"r":"Moderate Risk"},{"s":"Hamamelis virginiana","c":"Common Witchhazel","v":0.367935,"r":"Moderate Risk"},{"s":"Maclura pomifera","c":"Osage Orange","v":0.356675,"r":"Moderate Risk"},{"s":"Acer saccharum","c":"Sugar Maple","v":0.349568,"r":"Moderate Risk"},{"s":"Acer saccharinum","c":"Silver Maple","v":0.349521,"r":"Moderate Risk"},{"s":"Pinus rigtda","c":"Pitch Pine","v":0.348396,"r":"Moderate Risk"},{"s":"Acer nigrum","c":"Black Maple","v":0.346684,"r":"Moderate Risk"},{"s":"Betula alleghaniensis","c":"Yellow Birch","v":0.330944,"r":"Moderate Risk"},{"s":"Malus spp.","c":"Flowering Crab Apple","v":0.32591,"r":"Moderate Risk"},{"s":"Malus 'hargozam'","c":"Harvest Gold Crabapple","v":0.324856,"r":"Moderate Risk"},{"s":"Malus 'hargozam'","c":"Spring Snow Crabapple","v":0.324105,"r":"Moderate Risk"},{"s":"Malus 'sutyzam'","c":"Sugar Tyme Crabapple","v":0.323787,"r":"Moderate Risk"},{"s":"Malus 'indian magic'","c":"Indian Magic Crabapple","v":0.323772,"r":"Moderate Risk"},{"s":"Malus 'pink spires'","c":"Pink Spires Crabapple","v":0.323772,"r":"Moderate Risk"},{"s":"Malus 'prairiefire'","c":"Prairie Fire Crabapple","v":0.323772,"r":"Moderate Risk"},{"s":"Malus 'profusion'","c":"Profusion Crabapple","v":0.323772,"r":"Moderate Risk"},{"s":"Syringa vulgaris","c":"Common Lilac","v":0.319984,"r":"Moderate Risk"},{"s":"Quercus montana","c":"Chestnut Oak","v":0.318374,"r":"Moderate Risk"},{"s":"Juglans nigra","c":"Black Walnut","v":0.31151,"r":"Moderate Risk"},{"s":"Juglans clnerea","c":"Butternut","v":0.311178,"r":"Moderate Risk"},{"s":"Juglans spp.","c":"Misc Walnut","v":0.309813,"r":"Moderate Risk"},{"s":"Quercus cocclnea","c":"Scarlet Oak","v":0.30383,"r":"Moderate Risk"},{"s":"Gymnocladus dioicus","c":"Kentucky Coffeetree","v":0.302272,"r":"Moderate Risk"},{"s":"Gymnocladus dioicus 'espresso'","c":"Espresso Kentucky Coffee Tree","v":0.302272,"r":"Moderate Risk"},{"s":"Maackia amurensis","c":"Amur Maackia","v":0.302272,"r":"Moderate Risk"},{"s":"Styphnolobium japonicum","c":"Japanese Pagoda Tree","v":0.302245,"r":"Moderate Risk"},{"s":"Laburnum x watereri","c":"Goldenchain Tree","v":0.302176,"r":"Moderate Risk"},{"s":"Prunus x cistena","c":"Purpleleaf Sand Cherry","v":0.295195,"r":"Moderate Risk"},{"s":"Populus alba","c":"White Poplar","v":0.293016,"r":"Moderate Risk"},{"s":"Ulmus rubra","c":"Slippery Elm","v":0.292455,"r":"Moderate Risk"},{"s":"Morus rubra","c":"Red Mulberry","v":0.287646,"r":"Moderate Risk"},{"s":"Malus 'spring snow'","c":"Athena Lacebark Elm","v":0.280785,"r":"Moderate Risk"},{"s":"Carya glabra","c":"Pignut Hickory","v":0.278258,"r":"Moderate Risk"},{"s":"Salix alba","c":"White Willow","v":0.277788,"r":"Moderate Risk"},{"s":"Salix discolor","c":"Pussy Willow","v":0.268077,"r":"Moderate Risk"},{"s":"Ulmus parvifolia 'Chinese'","c":"Chinese Elm","v":0.267344,"r":"Moderate Risk"},{"s":"Ulmus americana","c":"American Elm","v":0.267336,"r":"Moderate Risk"},{"s":"Ulmus glabra","c":"Scotch / Wych Elm","v":0.267336,"r":"Moderate Risk"},{"s":"Ulmus parvifolia 'Bosque'","c":"Bosque Elm","v":0.267246,"r":"Moderate Risk"},{"s":"Ulmus procera","c":"English Elm","v":0.266387,"r":"Moderate Risk"},{"s":"Ulmus 'frontier'","c":"Frontier Elm","v":0.265774,"r":"Moderate Risk"},{"s":"Ulmus 'frontier'","c":"Kwanzan Cherry","v":0.265774,"r":"Moderate Risk"},{"s":"Ulmus 'frontier'","c":"Spring Snow Crabapple","v":0.265774,"r":"Moderate Risk"},{"s":"Ulmus americana 'valley forge'","c":"Valley Forge Elm","v":0.264851,"r":"Moderate Risk"},{"s":"Ulmus americana 'princeton'","c":"Princeton Elm","v":0.264508,"r":"Moderate Risk"},{"s":"Gymnocladusd dioicus","c":"Kentucky Coffeetree","v":0.262874,"r":"Moderate Risk"},{"s":"Morus alba","c":"White Mulberry","v":0.262626,"r":"Moderate Risk"},{"s":"Morus alba 'pendula'","c":"Weeping Mulberry","v":0.262538,"r":"Moderate Risk"},{"s":"Gleditsia triacanthos var. inermis","c":"Honey Locust","v":0.26208,"r":"Moderate Risk"},{"s":"Acer spp.","c":"Maple Acer Spp.","v":0.259464,"r":"Moderate Risk"},{"s":"Acer spp.","c":"Red Maple","v":0.259427,"r":"Moderate Risk"},{"s":"Tilia cordata","c":"Littleleaf Linden","v":0.25798,"r":"Moderate Risk"},{"s":"Acer rubrum","c":"Espresso Kentucky Coffee Tree","v":0.25719,"r":"Moderate Risk"},{"s":"Fraxlnus nigra","c":"Black Ash","v":0.256864,"r":"Moderate Risk"},{"s":"Tilia x flavescens 'glenleven'","c":"Glenleven Linden","v":0.251868,"r":"Moderate Risk"},{"s":"Tilia cordata 'Greenspire'","c":"Greenspire Linden","v":0.251716,"r":"Moderate Risk"},{"s":"Tilia mongolica","c":"Mongolian Linden","v":0.25137,"r":"Moderate Risk"},{"s":"Tilia x euchlora","c":"Crimean Linden","v":0.251341,"r":"Moderate Risk"},{"s":"Rhamnus cathartica","c":"Common Buckthorn","v":0.246245,"r":"Moderate Risk"},{"s":"Thuja spp.","c":"Misc Cedar","v":0.246245,"r":"Moderate Risk"},{"s":"Picea spp.","c":"Spruce Spp.","v":0.24624,"r":"Moderate Risk"},{"s":"Acer campestre","c":"Hedge Maple","v":0.246208,"r":"Moderate Risk"},{"s":"Acer palmatum","c":"Japanese Maple","v":0.246208,"r":"Moderate Risk"},{"s":"Acer tataricum","c":"Tartarian Maple","v":0.246208,"r":"Moderate Risk"},{"s":"Acer x freemanii 'Armstrong'","c":"Armstrong Maple","v":0.246208,"r":"Moderate Risk"},{"s":"Acer x freemanii 'Armstrong'","c":"Autumn Blaze Maple","v":0.246208,"r":"Moderate Risk"},{"s":"Morus spp.","c":"Mulberry","v":0.246208,"r":"Moderate Risk"},{"s":"Aesculus hippocastanum","c":"Horse Chestnut","v":0.246192,"r":"Moderate Risk"},{"s":"Aesculus hippocastanum","c":"Basswood","v":0.246166,"r":"Moderate Risk"},{"s":"Tilia platyphyllos","c":"Bigleaf Linden","v":0.246166,"r":"Moderate Risk"},{"s":"Acer griseum","c":"Paperbark Maple","v":0.246114,"r":"Moderate Risk"},{"s":"Tilia americana","c":"American Basswood","v":0.246084,"r":"Moderate Risk"},{"s":"Phellodendron amurense","c":"Amur Cork","v":0.246013,"r":"Moderate Risk"},{"s":"Acer triflorum","c":"Three-Flower Maple","v":0.245386,"r":"Moderate Risk"},{"s":"Acer triflorum","c":"Largeleaf Linden","v":0.245251,"r":"Moderate Risk"},{"s":"Acer triflorum","c":"Persian Ironwood","v":0.245244,"r":"Moderate Risk"},{"s":"Tilia americana 'Sentry'","c":"Sentry Linden","v":0.245195,"r":"Moderate Risk"},{"s":"Tilia tomentosa","c":"Silver Linden","v":0.245141,"r":"Moderate Risk"},{"s":"Tilia tomentosa","c":"Sterling Silver Linden","v":0.245088,"r":"Moderate Risk"},{"s":"Acer spicatum","c":"Mountain Maple","v":0.245058,"r":"Moderate Risk"},{"s":"Aesculus hippocastanum 'Baumannii'","c":"Baumann Horsechestnut","v":0.245013,"r":"Moderate Risk"},{"s":"Phellodendron amurense 'macho'","c":"Macho Amur Corktree","v":0.244998,"r":"Moderate Risk"},{"s":"Aesculus carnea","c":"Ruby Red Horsechestnut","v":0.244772,"r":"Moderate Risk"},{"s":"Aesculus carnea","c":"Linden Spp.","v":0.244772,"r":"Moderate Risk"},{"s":"Halesia tetraptera","c":"Carolina Silverbell","v":0.244665,"r":"Moderate Risk"},{"s":"Halesia tetraptera","c":"Fort Mcnair Red Horsechestnut","v":0.244619,"r":"Low Risk"},{"s":"Acer freemanii 'armstrong'","c":"Athena Lacebark Elm","v":0.244594,"r":"Low Risk"},{"s":"Acer x freemanii","c":"Freeman Maple","v":0.244594,"r":"Low Risk"},{"s":"Acer x freemanii 'Autumn Blaze'","c":"American Hophornbeam Ironwood","v":0.244594,"r":"Low Risk"},{"s":"Aesculus carnea 'fort mcnair'","c":"Athena Lacebark Elm","v":0.24457,"r":"Low Risk"},{"s":"Aesculus carnea 'fort mcnair'","c":"Frans Fontaine Hornbeam","v":0.24457,"r":"Low Risk"},{"s":"Aesculus carnea 'fort mcnair'","c":"Purple Robe Locust","v":0.24457,"r":"Low Risk"},{"s":"Tilia americana 'american sentry'","c":"American Sentry Basswood","v":0.244563,"r":"Low Risk"},{"s":"Tilia americana 'american sentry'","c":"Espresso Kentucky Coffee Tree","v":0.244563,"r":"Low Risk"},{"s":"Tilia tomentosa 'sterling silver'","c":"Chanticleer Ornamental Pear","v":0.244563,"r":"Low Risk"},{"s":"Tilia tomentosa 'sterling silver'","c":"Frans Fontaine Hornbeam","v":0.244563,"r":"Low Risk"},{"s":"Inside the blvd.","c":"Blue Beech","v":0.244541,"r":"Low Risk"},{"s":"Parrotia persica","c":"American Hophornbeam Ironwood","v":0.244541,"r":"Low Risk"},{"s":"Parrotia persica","c":"Spring Snow Crabapple","v":0.244541,"r":"Low Risk"},{"s":"Styrax japonicus","c":"Japanese Snowbell","v":0.244474,"r":"Low Risk"},{"s":"Carya cordiformis","c":"Bitternut Hickory","v":0.238461,"r":"Low Risk"},{"s":"Amelanchier spp.","c":"Serviceberry","v":0.238457,"r":"Low Risk"},{"s":"Amelanchier laevis","c":"Smooth Serviceberry","v":0.237858,"r":"Low Risk"},{"s":"Amelanchier laevis","c":"Sycamore","v":0.235213,"r":"Low Risk"},{"s":"Betula papyrifera","c":"White Birch","v":0.232017,"r":"Low Risk"},{"s":"Celtis occidentalis","c":"Common Hackberry","v":0.218453,"r":"Low Risk"},{"s":"Celtis occidentalis","c":"Native Hackberry","v":0.218453,"r":"Low Risk"},{"s":"Celtis occidentalis","c":"Prairie Sentinel Hackberry","v":0.21812,"r":"Low Risk"},{"s":"Celtis occidentalis 'Prairie Sentinel'","c":"Blue Beech","v":0.217996,"r":"Low Risk"},{"s":"Fagus grandifolia","c":"American Beech","v":0.211365,"r":"Low Risk"},{"s":"Fagus sylvatica","c":"European Beech","v":0.211365,"r":"Low Risk"},{"s":"Fagus sylvatica 'purpurea'","c":"Purple Beech","v":0.211365,"r":"Low Risk"},{"s":"Fagus sylvatica 'dawyck purple'","c":"Dawyck Purple European Beech","v":0.211205,"r":"Low Risk"},{"s":"Fagus sylvatica 'dawyck purple'","c":"Tricolor Beech","v":0.211205,"r":"Low Risk"},{"s":"Fagus sylvatica 'pendula'","c":"Weeping Beech","v":0.211128,"r":"Low Risk"},{"s":"Fagus sylvatica 'riversii'","c":"Rivers Beech","v":0.210433,"r":"Low Risk"},{"s":"Fagus sylvatica 'purpurea tricolor'","c":"","v":0.210037,"r":"Low Risk"},{"s":"Copper beech","c":"Dawyck Purple European Beech","v":0.209997,"r":"Low Risk"},{"s":"Elaeagnus angustifolia","c":"Russian Olive","v":0.208241,"r":"Low Risk"},{"s":"Acer pensylvanicum","c":"Striped Maple","v":0.205555,"r":"Low Risk"},{"s":"Quercus robur","c":"English Oak","v":0.202433,"r":"Low Risk"},{"s":"Quercus robur","c":"English Oak Fastigiata","v":0.202433,"r":"Low Risk"},{"s":"Quercus robur","c":"Pyramidal English Oak","v":0.202269,"r":"Low Risk"},{"s":"Quercus muehlenbergii","c":"Chinkapin Oak","v":0.202112,"r":"Low Risk"},{"s":"Quercus spp.","c":"Oak Spp.","v":0.201892,"r":"Low Risk"},{"s":"Quercus ellipsoidalis","c":"Hill's Oak","v":0.200853,"r":"Low Risk"},{"s":"Quercus robur 'fastigiata'","c":"Blue Beech","v":0.200853,"r":"Low Risk"},{"s":"Cotinus coggygria","c":"Smoke Tree","v":0.197331,"r":"Low Risk"},{"s":"Rhus typhina","c":"Staghorn Sumac","v":0.197053,"r":"Low Risk"},{"s":"Acer negundo","c":"Manitoba Maple","v":0.19616,"r":"Low Risk"},{"s":"Acer negundo","c":"Eastern Redbud","v":0.183096,"r":"Low Risk"},{"s":"Acer negundo","c":"Red Bud","v":0.183096,"r":"Low Risk"},{"s":"Quercus rubra","c":"Red Oak","v":0.183074,"r":"Low Risk"},{"s":"Cercis canadensis 'forest pansy'","c":"Forest Pansy Redbud","v":0.182896,"r":"Low Risk"},{"s":"Cercis canadensis 'alba'","c":"White Redbud","v":0.182684,"r":"Low Risk"},{"s":"Cercis canadensis","c":"Bloodgood London Planetree","v":0.182393,"r":"Low Risk"},{"s":"Cercis canadensis","c":"Sycamore","v":0.175484,"r":"Low Risk"},{"s":"Prunus serotina","c":"Black Cherry","v":0.166395,"r":"Low Risk"},{"s":"Carya ovata","c":"Shagbark Hickory","v":0.156622,"r":"Low Risk"},{"s":"Acer macrophyllum","c":"Bigleaf Maple","v":0.153172,"r":"Low Risk"},{"s":"Caragana arborescens","c":"Pea Shrub","v":0.152297,"r":"Low Risk"},{"s":"Fraxinus pennsylvanica","c":"Green Ash","v":0.144635,"r":"Low Risk"},{"s":"Prunus pensylvanica","c":"Pin Cherry","v":0.140801,"r":"Low Risk"},{"s":"Carpinus betulus","c":"European Hornbeam","v":0.131205,"r":"Low Risk"},{"s":"Corylus colurna","c":"Turkish Hazel","v":0.131205,"r":"Low Risk"},{"s":"Corylus colurna","c":"Ironwood","v":0.131205,"r":"Low Risk"},{"s":"Ostrya virginiana","c":"American Hophornbeam","v":0.131108,"r":"Low Risk"},{"s":"Carpinus betulas 'frans fontaine'","c":"Frans Fontaine Hornbeam","v":0.130824,"r":"Low Risk"},{"s":"Carpinus betulas 'frans fontaine'","c":"Sterling Silver Linden","v":0.130605,"r":"Low Risk"},{"s":"Carpinus betulas 'frans fontaine'","c":"American Hophornbeam Ironwood","v":0.130605,"r":"Low Risk"},{"s":"Quercus alba","c":"White Oak","v":0.112612,"r":"Low Risk"},{"s":"Prunus serrulata 'kwanzan'","c":"Kwanzan Cherry","v":0.112317,"r":"Low Risk"},{"s":"Prunus spp.","c":"Cherry","v":0.112317,"r":"Low Risk"},{"s":"Prunus serrulata 'amanogawa'","c":"Amanogawa Japanese Flowering Cherry","v":0.111895,"r":"Low Risk"},{"s":"Prunus serrulata 'shirofugen'","c":"Shirofugen Oriental Cherry","v":0.111202,"r":"Low Risk"},{"s":"Prunus serrulata 'shirofugen'","c":"Sterling Silver Linden","v":0.11116,"r":"Low Risk"},{"s":"Malus baccata 'columnaris'","c":"Columnar Siberian Crabapple","v":0.103039,"r":"Low Risk"},{"s":"Malus pumila","c":"Common Apple","v":0.103039,"r":"Low Risk"},{"s":"Prunus virginiana 'schubert","c":"Schubert Choke Cherry","v":0.103013,"r":"Low Risk"},{"s":"Prunus vlrginiana","c":"Common Chokecherry","v":0.103013,"r":"Low Risk"},{"s":"Malus 'branzam'","c":"Brandywine Crabapple","v":0.102973,"r":"Low Risk"},{"s":"Malus coronaria","c":"Sweet Crabapple","v":0.102907,"r":"Low Risk"},{"s":"Prunus serrulata","c":"Flowering Cherry","v":0.102863,"r":"Low Risk"},{"s":"Prunus subhirtella 'pendula'","c":"Weeping Higan Cherry","v":0.102791,"r":"Low Risk"},{"s":"Prunus maackii","c":"Amur Chokecherry","v":0.102518,"r":"Low Risk"},{"s":"Prunus cerasifera","c":"Cherry Plum","v":0.102273,"r":"Low Risk"},{"s":"Prunus triloba var. multiplex","c":"Flowering Almond","v":0.101707,"r":"Low Risk"},{"s":"Prunus x yedoensis","c":"Yoshino Cherry","v":0.101447,"r":"Low Risk"},{"s":"Prunus sargentii","c":"Sargent Cherry","v":0.101442,"r":"Low Risk"},{"s":"Prunus x subhirtella","c":"Higan Cherry","v":0.101427,"r":"Low Risk"},{"s":"Prunus sargentii columnaris","c":"Columnar Sargent Cherry","v":0.100673,"r":"Low Risk"},{"s":"Populus tremuloides","c":"Trembling Aspen","v":0.099513,"r":"Low Risk"},{"s":"Quercus macrocarpa","c":"Bur Oak","v":0.052907,"r":"Low Risk"},{"s":"Ailanthus altissima","c":"Tree of Heaven","v":0.040554,"r":"Low Risk"},{"s":"Populus balsamifera","c":"Balsam Poplar","v":0.013168,"r":"Low Risk"},{"s":"Robinia pseudoacacla","c":"Black Locust","v":0.003726,"r":"Low Risk"},{"s":"Juniperus spp.","c":"Juniper","v":0.00154,"r":"Low Risk"},{"s":"Juniperus virginiana","c":"Eastern Red Cedar","v":0.00154,"r":"Low Risk"}];
 
-let rankFilter = 'all';
-let rankSortCol = 'score';
-let rankSortDir = 'desc';
+let rFilter='all', rSortCol='score', rSortDir='desc';
 
-function riskColor(r) {
-  if (r === 'High Risk')     return '#D32F2F';
-  if (r === 'Moderate Risk') return '#F9A825';
-  return '#2E7D32';
-}
-function riskBarColor(r) {
-  if (r === 'High Risk')     return '#D32F2F';
-  if (r === 'Moderate Risk') return '#F9A825';
-  return '#2E7D32';
-}
-function badgeClass(r) {
-  if (r === 'High Risk')     return 'rbadge rbadge-high';
-  if (r === 'Moderate Risk') return 'rbadge rbadge-mod';
-  return 'rbadge rbadge-low';
+function rColor(r){return r==='High Risk'?'#D32F2F':r==='Moderate Risk'?'#b8860b':'#2E7D32';}
+function rBadge(r){
+  if(r==='High Risk') return '<span class="rbadge rb-high">High Risk</span>';
+  if(r==='Moderate Risk') return '<span class="rbadge rb-mod">Moderate Risk</span>';
+  return '<span class="rbadge rb-low">Low Risk</span>';
 }
 
-function renderRanking() {
-  const q = document.getElementById('rank-search').value.toLowerCase();
-  let data = RANK_DATA.filter(d => {
-    const matchFilter = rankFilter === 'all' || d.risk === rankFilter;
-    const matchSearch = !q || d.scientific.toLowerCase().includes(q) || d.common.toLowerCase().includes(q);
-    return matchFilter && matchSearch;
+function renderRanking(){
+  const q=(document.getElementById('rank-search').value||'').toLowerCase();
+  let data=RD.filter(d=>{
+    const mf=rFilter==='all'||d.r===rFilter;
+    const ms=!q||d.s.toLowerCase().includes(q)||d.c.toLowerCase().includes(q);
+    return mf&&ms;
   });
-  // Sort
-  data.sort((a, b) => {
-    let va, vb;
-    if (rankSortCol === 'score') { va = a.score; vb = b.score; }
-    else if (rankSortCol === 'sci')    { va = a.scientific.toLowerCase(); vb = b.scientific.toLowerCase(); }
-    else if (rankSortCol === 'common') { va = a.common.toLowerCase();     vb = b.common.toLowerCase(); }
-    else if (rankSortCol === 'risk')   { va = a.score; vb = b.score; }
-    else { va = 0; vb = 0; }
-    return rankSortDir === 'asc' ? (va > vb ? 1 : -1) : (va < vb ? 1 : -1);
+  data.sort((a,b)=>{
+    let va,vb;
+    if(rSortCol==='score'){va=a.v;vb=b.v;}
+    else if(rSortCol==='sci'){va=a.s.toLowerCase();vb=b.s.toLowerCase();}
+    else if(rSortCol==='common'){va=a.c.toLowerCase();vb=b.c.toLowerCase();}
+    else if(rSortCol==='risk'){va=a.v;vb=b.v;}
+    else{va=0;vb=0;}
+    return rSortDir==='asc'?(va>vb?1:-1):(va<vb?1:-1);
   });
-  const tbody = document.getElementById('rank-tbody');
-  tbody.innerHTML = data.map((d, i) => `
+  document.getElementById('rank-tbody').innerHTML=data.map((d,i)=>`
     <tr>
-      <td class="td-rank">${i + 1}</td>
-      <td class="td-sci">${d.scientific}</td>
-      <td class="td-common">${d.common.trim() || '—'}</td>
+      <td class="td-rank">${i+1}</td>
+      <td class="td-sci">${d.s}</td>
+      <td class="td-common">${d.c||'—'}</td>
       <td class="td-score">
-        <div class="score-bar-wrap">
-          <span style="color:${riskColor(d.risk)};min-width:46px">${(d.score * 100).toFixed(1)}%</span>
-          <div class="score-bar-bg"><div class="score-bar-fill" style="width:${d.score*100}%;background:${riskBarColor(d.risk)}"></div></div>
+        <div class="sbar-wrap">
+          <span style="color:${rColor(d.r)};min-width:44px">${(d.v*100).toFixed(1)}%</span>
+          <div class="sbar-bg"><div class="sbar-fill" style="width:${d.v*100}%;background:${rColor(d.r)}"></div></div>
         </div>
       </td>
-      <td><span class="${badgeClass(d.risk)}">${d.risk}</span></td>
+      <td>${rBadge(d.r)}</td>
     </tr>`).join('');
-  document.getElementById('rank-count').textContent = data.length + ' species';
-  document.getElementById('rank-footer').textContent = data.length + ' species shown · Sorted by ' + rankSortCol + ' (' + rankSortDir + ') · Hamilton Urban Tree Inventory';
+  document.getElementById('rank-count').textContent=data.length+' entries';
+  document.getElementById('rank-footer').textContent=data.length+' entries shown · Sorted by '+rSortCol+' ('+rSortDir+') · Hamilton Urban Tree Inventory';
 }
 
-function filterRanking() { renderRanking(); }
-
-function setRiskFilter(f) {
-  rankFilter = f;
-  ['all','high','mod','low'].forEach(k => {
-    const el = document.getElementById('rf-' + k);
-    el.className = 'rank-filter';
+function setRF(f){
+  rFilter=f;
+  ['all','high','mod','low'].forEach(k=>{
+    const el=document.getElementById('rf-'+k);
+    el.className='rank-filter';
   });
-  const map = { 'all':'all', 'High Risk':'high', 'Moderate Risk':'mod', 'Low Risk':'low' };
-  const colorMap = { 'all':'active-all', 'High Risk':'active-high', 'Moderate Risk':'active-mod', 'Low Risk':'active-low' };
-  document.getElementById('rf-' + (map[f]||'all')).classList.add(colorMap[f] || 'active-all');
+  const map={'all':'all','High Risk':'high','Moderate Risk':'mod','Low Risk':'low'};
+  const cls={'all':'rf-active-all','High Risk':'rf-active-high','Moderate Risk':'rf-active-mod','Low Risk':'rf-active-low'};
+  document.getElementById('rf-'+(map[f]||'all')).classList.add(cls[f]||'rf-active-all');
   renderRanking();
 }
 
-function sortRanking(col) {
-  if (rankSortCol === col) rankSortDir = rankSortDir === 'asc' ? 'desc' : 'asc';
-  else { rankSortCol = col; rankSortDir = col === 'score' ? 'desc' : 'asc'; }
-  ['rank','sci','common','score','risk'].forEach(c => {
-    const el = document.getElementById('th-' + c);
-    if (el) el.className = '';
+function sortRank(col){
+  if(rSortCol===col) rSortDir=rSortDir==='asc'?'desc':'asc';
+  else{rSortCol=col;rSortDir=col==='score'?'desc':'asc';}
+  ['idx','sci','common','score','risk'].forEach(c=>{
+    const el=document.getElementById('rth-'+c);
+    if(el) el.className='';
   });
-  const el = document.getElementById('th-' + col);
-  if (el) el.className = 'sort-' + rankSortDir;
+  const el=document.getElementById('rth-'+col);
+  if(el) el.className='sort-'+rSortDir;
   renderRanking();
 }
 
-function openRanking() {
+function openRanking(){
   renderRanking();
   document.getElementById('rank-modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
-function closeRanking() {
+function closeRanking(){
   document.getElementById('rank-modal').classList.remove('open');
-  document.body.style.overflow = '';
+  document.body.style.overflow='';
 }
-function closeRankOutside(e) {
-  if (e.target === document.getElementById('rank-modal')) closeRanking();
+function closeRankOutside(e){
+  if(e.target===document.getElementById('rank-modal')) closeRanking();
 }
 </script>
 </body>
